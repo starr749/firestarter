@@ -239,7 +239,7 @@ angular.module('firestarterApp')
     };
 
     var assessResolve = function(foo) {
-      return "Perception Test (according to intent and task)"
+      return "Perception Test (according to intent and task)";
     };
 
     var physicalActionResolve = function(foo) {
@@ -262,7 +262,7 @@ angular.module('firestarterApp')
     var nockAndDrawResolve = function(foo) {
       return "This extended action readies your bow to shoot. Each type of bow has a different load time: Hunting bow, " +
         "5 actions; Elven bow, 5 actions; Great bow, 7 actions. To hit your target, script the Release action " +
-        "after Nook and Draw."
+        "after Nook and Draw.";
     };
 
     var fireGunOrCrossbowResolve = function(foo) {
@@ -284,8 +284,8 @@ angular.module('firestarterApp')
     };
 
     var intimidationResolve = function(foo) {
-      return "Intiniidation Ob = Will."
-    }
+      return "Intimidation Ob = Will.";
+    };
 
     ctrl.actions = [
       {id: 1, name: 'Strike', category: 'Attack Actions', resolveFunction: strikeResolve,
@@ -321,23 +321,23 @@ angular.module('firestarterApp')
       {id: 22, name: 'Snapshot', category: 'Shooting and Throwing Actions', resolveFunction: snapshotResolve},
       {id: 23, name: 'Throw Weapon', category: 'Shooting and Throwing Actions', resolveFunction: throwWeaponResolve},
       {id: 24, name: 'Cast Spell', category: 'Magic Actions', resolveFunction: castSpellResolve},
-      {id: 25, name: 'Drop Spell', category: 'Magic Actions', resolveFunction: function(foo){ return "-"}},
-      {id: 26, name: 'Command Spirit', category: 'Magic Actions', resolveFunction: function(foo){return "-"}},
+      {id: 25, name: 'Drop Spell', category: 'Magic Actions', resolveFunction: function(foo){ return "-";}},
+      {id: 26, name: 'Command Spirit', category: 'Magic Actions', resolveFunction: function(foo){return "-";}},
       {id: 27, name: 'Sing, Howl, Pray', category: 'Magic Actions', resolveFunction: function(foo){}},
-      {id: 28, name: 'Command', category: 'Social Actions', resolveFunction: function(foo){return "-"}},
+      {id: 28, name: 'Command', category: 'Social Actions', resolveFunction: function(foo){return "-";}},
       {id: 29, name: 'Intimidate', category: 'Social Actions', resolveFunction: intimidationResolve},
-      {id: 30, name: 'Fall Prone', category: 'Hesitation Actions', resolveFunction: function(foo){return "-"}},
-      {id: 31, name: 'Run Screaming', category: 'Hesitation Actions', resolveFunction: function(foo){return "-"}},
-      {id: 32, name: 'Stand & Drool', category: 'Hesitation Actions', resolveFunction: function(foo){return "-"}},
-      {id: 33, name: 'Swoon', category: 'Hesitation Actions', resolveFunction: function(foo){return "-"}}
+      {id: 30, name: 'Fall Prone', category: 'Hesitation Actions', resolveFunction: function(foo){return "-";}},
+      {id: 31, name: 'Run Screaming', category: 'Hesitation Actions', resolveFunction: function(foo){return "-";}},
+      {id: 32, name: 'Stand & Drool', category: 'Hesitation Actions', resolveFunction: function(foo){return "-";}},
+      {id: 33, name: 'Swoon', category: 'Hesitation Actions', resolveFunction: function(foo){return "-";}}
     ];
 
     $scope.update = function() {
-      if( (ctrl.p1Action == undefined) || (ctrl.p2Action == undefined)){
+      if( (ctrl.p1Action === undefined) || (ctrl.p2Action === undefined)){
         return;
       }
 
       $scope.player1int = ctrl.p1Action.selected.resolveFunction(ctrl.p2Action.selected);
       $scope.player2int = ctrl.p2Action.selected.resolveFunction(ctrl.p1Action.selected);
-    }
+    };
   }]);
