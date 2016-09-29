@@ -18,7 +18,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.select'
+    'ui.select',
+    'actions'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -26,6 +27,11 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
+      })
+      .when('/dow', {
+        templateUrl: 'views/dow.html',
+        controller: 'DowCtrl',
+        controllerAs: 'dow'
       })
       .when('/about', {
         templateUrl: 'views/about.html',

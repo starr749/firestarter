@@ -1,10 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="jumbotron">
+  <h1>Duel Of Wits</h1>
+  <p class="lead">
+    A quick Burning Wheel Duel of Wits Resolution Tool.
+  </p>
+  <!--<p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>-->
+</div>
+
+<div class="row marketing">
+  <div class="col-sm-6">
+    <h4>Player 1</h4>
+    <ui-select ng-model="dow.p1Action.selected" ng-disabled="dow.disabled" ng-change="update(dow.p1Action.selected, dow.p2Action.selected)" style="min-width: 300px;" title="Choose an Action">
+      <ui-select-match placeholder="Select an Action...">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices group-by="'category'" repeat="action in dow.actions | filter: $select.search">
+        <div ng-bind-html="action.name | highlight: $select.search"></div>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="col-sm-6">
+    <h4>Player 2</h4>
+    <ui-select ng-model="dow.p2Action.selected" ng-disabled="dow.disabled" ng-change="update(dow.p2Action.selected, dow.p1Action.selected)"style="min-width: 300px;" title="Choose an Action">
+      <ui-select-match placeholder="Select an Action...">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices group-by="'category'" repeat="action in dow.actions | filter: $select.search">
+        <div ng-bind-html="action.name | highlight: $select.search"></div>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+</div>
+<div class="row marketing">
+  <div class="col-sm-6">
+    <h5>Resulting Player 1 Interaction</h5>
+    <div class="">
+      <table class="table table-striped">
+        <tbody>
+        <tr>
+          <th scope="row">Interaction</th>
+          <td>Skill vs Skill</td>
+        </tr>
+        <tr>
+          <th scope="row">Test</th>
+          <td>{{player1act.tests}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Speaking the Part</th>
+          <td>{{player1act.speaking}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Effects</th>
+          <td>{{player1act.effects}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Special</th>
+          <td>{{player1act.special}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <h5>Resulting Player 2 Interaction</h5>
+    <div class="">
+      <table class="table table-striped">
+        <tbody>
+        <tr>
+          <th scope="row">Interaction</th>
+          <td>Skill vs Skill</td>
+        </tr>
+        <tr>
+          <th scope="row">Test</th>
+          <td>{{player2act.tests}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Speaking the Part</th>
+          <td>{{player2act.speaking}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Effects</th>
+          <td>{{player2act.effects}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Special</th>
+          <td>{{player2act.special}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
