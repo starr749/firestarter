@@ -11,11 +11,11 @@
  * Controller of the firestarterApp
  */
 angular.module('firestarterApp')
-  .controller('DowCtrl', ['$scope', '$http', 'ACTIONS', function ($scope, $http, ACTIONS) {
+  .controller('DowCtrl', ['$scope', '$http', 'ACTIONS', 'INTERACTIONS', function ($scope, $http, ACTIONS, INTERACTIONS) {
     var ctrl = this;
 
     ctrl.actions = ACTIONS.dow;
-
+    ctrl.interactions = INTERACTIONS.dow;
 
     ctrl.player1int = "";
     ctrl.player2int = "";
@@ -31,6 +31,8 @@ angular.module('firestarterApp')
 
       $scope.player1act = ctrl.p1Action.selected;
       $scope.player2act = ctrl.p2Action.selected;
+      $scope.player1int = ctrl.interactions[ctrl.p1Action.selected.name][ctrl.p2Action.selected.name];
+      $scope.player2int = ctrl.interactions[ctrl.p2Action.selected.name][ctrl.p1Action.selected.name];
 
 
     };

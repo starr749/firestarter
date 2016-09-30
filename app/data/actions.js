@@ -69,5 +69,74 @@
         }
       ]
 
-    })
+    });
+  act.constant('INTERACTIONS',
+    {
+      "dow": {
+        "Avoid the Topic": {
+          "Avoid the Topic": "-",
+          "Dismiss": "-",
+          "Feint": "-",
+          "Incite": "Versus",
+          "Obfuscate": "Versus",
+          "Point": "Versus",
+          "Rebuttal": "-"
+        },
+        "Dismiss": {
+          "Avoid the Topic": "Standard",
+          "Dismiss": "Standard",
+          "Feint": "Standard",
+          "Incite": "Standard",
+          "Obfuscate": "Versus",
+          "Point": "Standard",
+          "Rebuttal": "Versus"
+        },
+        "Feint": {
+          "Avoid the Topic": "-",
+          "Dismiss": "-",
+          "Feint": "Versus",
+          "Incite": "Versus",
+          "Obfuscate": "Versus",
+          "Point": "-",
+          "Rebuttal": "Standard"
+        },
+        "Incite": {
+          "Avoid the Topic": "Versus",
+          "Dismiss": "Standard",
+          "Feint": "Versus",
+          "Incite": "Standard",
+          "Obfuscate": "Versus",
+          "Point": "Standard",
+          "Rebuttal": "Standard"
+        },
+        "Obfuscate": {
+          "Avoid the Topic": "Versus",
+          "Dismiss": "Versus",
+          "Feint": "Versus",
+          "Incite": "Versus",
+          "Obfuscate": "Versus",
+          "Point": "Versus",
+          "Rebuttal": "Versus"
+        },
+        "Point": {
+          "Avoid the Topic": "Versus",
+          "Dismiss": "Standard",
+          "Feint": "Standard",
+          "Incite": "Standard",
+          "Obfuscate": "Versus",
+          "Point": "Standard",
+          "Rebuttal": "Versus"
+        },
+        "Rebuttal": {
+          "Avoid the Topic": "-",
+          "Dismiss": "Versus",
+          "Feint": "-",
+          "Incite": "-",
+          "Obfuscate": "Versus",
+          "Point": "Versus",
+          "Rebuttal": "-"
+        }
+      }
+    });
+
 })();

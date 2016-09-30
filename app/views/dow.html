@@ -1,8 +1,7 @@
 <div class="jumbotron">
   <h1>Duel Of Wits</h1>
-  <p class="lead">
-    A quick Burning Wheel Duel of Wits Resolution Tool.
-  </p>
+  <!--<p class="lead">-->
+  <!--</p>-->
   <!--<p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>-->
 </div>
 
@@ -33,27 +32,61 @@
       <table class="table table-striped">
         <tbody>
         <tr>
-          <th scope="row">Interaction</th>
-          <td>Skill vs Skill</td>
+          <th scope="row">Type of Test</th>
+          <td>{{player1int}}</td>
         </tr>
         <tr>
-          <th scope="row">Test</th>
+          <th scope="row">Skill(s) to Test</th>
           <td>{{player1act.tests}}</td>
-        </tr>
-        <tr>
-          <th scope="row">Speaking the Part</th>
-          <td>{{player1act.speaking}}</td>
-        </tr>
-        <tr>
-          <th scope="row">Effects</th>
-          <td>{{player1act.effects}}</td>
-        </tr>
-        <tr>
-          <th scope="row">Special</th>
-          <td>{{player1act.special}}</td>
         </tr>
         </tbody>
       </table>
+
+      <div ng-show="player1int !== undefined && player1int !== '-' " class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="javascript:;" aria-expanded="false" aria-controls="collapseOne" data-target="#collapseOne">
+                Speaking the Part
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+              {{player1act.speaking}}
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="javascript:;" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Effects
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+              {{player1act.effects}}
+            </div>
+          </div>
+        </div>
+        <div ng-show="player1act.special !== undefined && player1act.special.length !== 0" class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="javascript:;" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Special
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+              {{player1act.special}}
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -63,27 +96,59 @@
       <table class="table table-striped">
         <tbody>
         <tr>
-          <th scope="row">Interaction</th>
-          <td>Skill vs Skill</td>
+          <th scope="row">Type of Test</th>
+          <td>{{player2int}}</td>
         </tr>
         <tr>
-          <th scope="row">Test</th>
+          <th scope="row">Skill(s) to Test</th>
           <td>{{player2act.tests}}</td>
-        </tr>
-        <tr>
-          <th scope="row">Speaking the Part</th>
-          <td>{{player2act.speaking}}</td>
-        </tr>
-        <tr>
-          <th scope="row">Effects</th>
-          <td>{{player2act.effects}}</td>
-        </tr>
-        <tr>
-          <th scope="row">Special</th>
-          <td>{{player2act.special}}</td>
         </tr>
         </tbody>
       </table>
+      <div ng-show="player2int !== undefined && player2int !== '-' " class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="javascript:;" aria-expanded="false" aria-controls="collapseOne" data-target="#p2collapseOne">
+                Speaking the Part
+              </a>
+            </h4>
+          </div>
+          <div id="p2collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+              {{player2act.speaking}}
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="p2headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="javascript:;" data-target="#p2collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Effects
+              </a>
+            </h4>
+          </div>
+          <div id="p2collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+              {{player2act.effects}}
+            </div>
+          </div>
+        </div>
+        <div ng-show="player2act.special !== undefined && player2act.special.length !== 0" class="panel panel-default">
+          <div class="panel-heading" role="tab" id="p2headingThree">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="javascript:;" data-target="#p2collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Special
+              </a>
+            </h4>
+          </div>
+          <div id="p2collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+              {{player2act.special}}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
