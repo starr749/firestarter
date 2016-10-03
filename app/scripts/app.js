@@ -28,6 +28,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/fight', {
+        templateUrl: 'views/fight.html',
+        controller: 'FightCtrl',
+        controllerAs: 'fight'
+      })
       .when('/dow', {
         templateUrl: 'views/dow.html',
         controller: 'DowCtrl',

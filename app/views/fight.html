@@ -1,0 +1,43 @@
+<div class="jumbotron">
+  <h1>Fight!</h1>
+  <!--<p class="lead">-->
+    <!--A quick Burning Wheel Fight! Resolution Tool.-->
+  <!--</p>-->
+  <!--<p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>-->
+</div>
+
+<div class="row marketing">
+  <div class="col-sm-6">
+    <h4>Player 1</h4>
+    <ui-select ng-model="fight.p1Action.selected" ng-disabled="fight.disabled" ng-change="update(fight.p1Action.selected, fight.p2Action.selected)" style="min-width: 300px;" title="Choose an Action">
+      <ui-select-match placeholder="Select an Action...">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices group-by="'category'" repeat="action in fight.actions | filter: $select.search">
+        <div ng-bind-html="action.name | highlight: $select.search"></div>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="col-sm-6">
+    <h4>Player 2</h4>
+    <ui-select ng-model="fight.p2Action.selected" ng-disabled="fight.disabled" ng-change="update(fight.p2Action.selected, fight.p1Action.selected)"style="min-width: 300px;" title="Choose an Action">
+      <ui-select-match placeholder="Select an Action...">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices group-by="'category'" repeat="action in fight.actions | filter: $select.search">
+        <div ng-bind-html="action.name | highlight: $select.search"></div>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+</div>
+<div class="row marketing">
+  <div class="col-sm-6">
+    <h5>Resulting Player 1 Interaction</h5>
+    <div class="well">
+      <p>{{player1int}}</p>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <h5>Resulting Player 2 Interaction</h5>
+    <div class="well">
+      <p>{{player2int}}</p>
+    </div>
+  </div>
+</div>
