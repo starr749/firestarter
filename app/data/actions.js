@@ -67,6 +67,48 @@
           "effects": "In a standard test, the obstacle is equal to the victim’s Will exponent. If the Inciting player passes the standard test or wins the versus test, the victim must make a Steel test. If the victim hesitates, he misses his next action. However, if the Incite fails, the margin of failure is added as advantage dice to the opponent’s next test.",
           "special": ""
         }
+      ],
+      fight: [
+        {
+          "id:": 1,
+          "name": "Strike",
+          "category": "Attack Actions",
+          "Test": "Weapon, Brawling, Boxing",
+          "Effect": "Effect: Successes over the obstacle or margin of success in versus tests are used to increase " +
+          "damage and target a specific location. See the weapons chapter for instructions on doing damage. You can only " +
+          "Strike consecutively a number of times equal to your weapon speed. If you're alternating between different " +
+          "weapons, use the lower weapon speed."
+        },
+        {
+          "id:": 2,
+          "name": "Great Strike",
+          "category": "Attack Actions",
+          "Test": "Weapon, Brawling, Boxing",
+          "restrictions": "Great Strike costs two actions to perform. On the first action, you take a breath " +
+          "to set up your attack. You are effectively defenseless on this action; you count as Stand and Drool " +
+          "hesitating. Also, while any weapon can perform a Great Strike, you must be able to put two hands on the " +
+          "weapon to do so. A Great Strike counts as one action against your weapon speed limitation.",
+          "Effect": "A Great Strike, is a lunging thrust, an overhand strike or a half-sword technique. " +
+          "On the second action, Great Strike acts like a Strike but with two exceptions: It bypasses the Block action " +
+          "and it grants a bonus to damage or armor penetration. Choose before you roll: +1 to your Incidental, Mark " +
+          "and Superb damage results or +1 to your weapon's versus armor rating."
+        },
+        {
+          "id:": 3,
+          "name": "Block & Strike",
+          "category": "Attack Actions",
+          "tests": "Block and Strike tests the character's weapon skill. Divide your dice into two pools before " +
+          "rolling—one for defense, one for attack. Add any shield dice to the defense portion, less the versus " +
+          "armor rating of your opponent's weapon.",
+          "effect": "Successes from the Block portion reduce the successes of your opponent's action. " +
+          "The Strike dice act like a Strike action. Apply penalties from wounds, light, weather and knock down to " +
+          "both parts of the actions. Any advantages are only applied to one side. " +
+          "You don't have to allocate any skill dice to defense, you can rely solely on your shield to protect you. " +
+          "Disadvantage from weapon length or vying for position only applies to the Strike portion.",
+          "interactions": "Block and Strike counts as Block and a Strike for the purposes of interactions. " +
+          "Test your divided pool against the possible interactions for both of those actions. Against Counterstrike, " +
+          "both characters defend and both attack according to their action."
+        }
       ]
 
     });
