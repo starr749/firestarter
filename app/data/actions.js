@@ -97,10 +97,10 @@
           "id:": 3,
           "name": "Block & Strike",
           "category": "Attack Actions",
-          "tests": "Block and Strike tests the character's weapon skill. Divide your dice into two pools before " +
+          "Test": "Block and Strike tests the character's weapon skill. Divide your dice into two pools before " +
           "rolling—one for defense, one for attack. Add any shield dice to the defense portion, less the versus " +
           "armor rating of your opponent's weapon.",
-          "effect": "Successes from the Block portion reduce the successes of your opponent's action. " +
+          "Effect": "Successes from the Block portion reduce the successes of your opponent's action. " +
           "The Strike dice act like a Strike action. Apply penalties from wounds, light, weather and knock down to " +
           "both parts of the actions. Any advantages are only applied to one side. " +
           "You don't have to allocate any skill dice to defense, you can rely solely on your shield to protect you. " +
@@ -108,6 +108,14 @@
           "interactions": "Block and Strike counts as Block and a Strike for the purposes of interactions. " +
           "Test your divided pool against the possible interactions for both of those actions. Against Counterstrike, " +
           "both characters defend and both attack according to their action."
+        },
+        {
+          "id:": 4,
+          "name": "Lock & Strike",
+          "category": "Attack Actions",
+          "Test": "Savage Attack",
+          "Effect": "Successes over the obstacle count as damage as per the standard IMS damage rules and as a Lock " +
+          "as per the Lock action."
         }
       ]
 
