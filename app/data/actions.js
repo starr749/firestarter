@@ -164,6 +164,210 @@
           "The attack portion counts as a Strike action. However, the Strike " +
           "portion of Counterstrike doesn°t suffer disadvantages from weapon " +
           "length or vying for position."
+        },
+        {
+          "id:": 9,
+          "name": "Assess",
+          "category": "Basic Actions",
+          "Description": "Assessing allows a player to look for specific details—easy exits, " +
+          "the sources of that burning smell and unarmored locations on his " +
+          "opponent.",
+          "Test": "Perception",
+          "Special": "An assess takes one action. This is a quick, over the shoulder " +
+          "glance. Additional actions may be spent on an assess in order to " +
+          "gain advantage dice to the Perception test— +1D for a second action " +
+          "and +2D for a third."
+        },
+        {
+          "id:": 10,
+          "name": "Change Stance",
+          "category": "Basic Actions",
+          "Test": "It does not require a test to change stances. There are three " +
+          "fighting stances: neutral, defensive and aggressive. Decide which " +
+          "stance you're changing to when you select this action",
+          "Neutral Stance": "Neutral stance is the default. You start a fight in neutral " +
+          "stance unless otherwise noted. It grants no advantage and suffers no " +
+          "disadvantages. The Change Stance: Neutral action counts as a Feint.",
+          "Defensive Stance": "Defensive stance grants +2D to Avoid, Block and " +
+          "Counterstrike. Strike and Great Strike suffer a +2 Ob penalty when " +
+          "performed from defensive stance. The Change Stance: Defensive " +
+          "action counts as a Block.",
+          "Aggresive stance": "Aggressive stance grants +2D to Strike and Great " +
+          "Strike. Block and Counterstrike suffer +2 Ob penalty. You may not " +
+          "Avoid. If you accidently script Avoid while in aggressive stance, " +
+          "you hesitate for a11 action. The Change Stance: Aggressive action " +
+          "counts as the first action of Intimidate (found in the Social Actions " +
+          "section). If you wish to complete the action, script one more action " +
+          "of Intimidate. See Social Actions for rules on intimidate.",
+          "Special": "Instead of using the stance dice as a bonus to actions in the " +
+          "script, a player may use his +2D bonus to aid him vying for position. " +
+          "Obviously, this must be declared at the top of the exchange. Stance " +
+          "dice used to position cannot then be used as a bonus to actions, but\n" +
+          "all other action/stance penalties apply.",
+          "Restrictions": "You keep your stance until you change stance, disengage, " +
+          "are incapacitated, hesitate or use the Charge/Tackle action. Any of " +
+          "these conditions automatically drops the character back to neutral " +
+          "stance. You may be Locked (but not incapacitated), on top of your " +
+          "opponent, on your back, riding a horse or unskilled and still take " +
+          "a stance."
+        },
+        {
+          "id:": 11,
+          "name": "Charge/Tackle",
+          "category": "Basic Actions",
+          "Test": "Your Power with a +1D advantage plus stride " +
+          "advantage. Charge/Tackle must be your first action in the volley.",
+          "Effect": "When performing this action, choose whether you're charging " +
+          "your opponent or tackling him. If you charge, you attempt to knock " +
+          "him down but you remain on your feet yourself. If you tackle, you " +
+          "take your opponent down with you. If you win the versus test by " +
+          "one or meet your obstacle in a standard test, you stagger your " +
+          "opponent. He's at +1 Ob to his next test, whatever it may be. If you " +
+          "win the versus test by two or exceed your obstacle in the standard " +
+          "test, you knock your opponent down. He is off his feet and suffers " +
+          "the appropriate penalties until he rights himself.",
+          "Charge": "If you successfully charge, you also take the advantage for " +
+          "your hands or for whatever weapon you're holding except spears " +
+          "and missiles—your choice.",
+          "Tackle": "If you tackle your opponent, you take the advantage at the " +
+          "Hands fighting distance. If you successfully tackle your opponent, " +
+          "he may not use the Shooting and Throwing or Magic actions. There " +
+          "is one exception: He may discharge a pistol at this range.",
+          "Restrictions": "Your stance reverts to neutral stance if you Charge/" +
+          "Tackle. if you fail this action, you give your opponent the advantage " +
+          "and lose your next action.",
+          "Special": "When you use this action you change weapons to your hands, " +
+          "unless you're using a shield which uses the short weapon length."
+        },
+        {
+          "id:": 12,
+          "name": "Draw Weapon",
+          "category": "Basic Actions",
+          "Action Cost": "Two actions are required to unsheath/unsling a handheld " +
+          "weapon. This includes “sheathed swords, throwing knives, slung " +
+          "crossbows, etc. Readying a weapon before a fight—on a strap or in " +
+          "an off hand—decreases draw time to one action."
+        },
+        {
+          "id": 13,
+          "name": "Physical Action",
+          "category": "Basic Actions",
+          "Test": "Physical actions typically use Power (to rip something open), " +
+          "Agility (to grab solnething) or Speed (to vault something).",
+          "Action Cost": "Physical acts eat up two actions.",
+          "Effect": "This category of actions covers everything from overttuning " +
+          "tables to opening doors and climbing tln'ough windows."
+        },
+        {
+          "id": 14,
+          "name": "Push",
+          "category": "Basic Actions",
+          "Test": "Push tests Power. Push uses the Hands weapon length.",
+          "Effect": "If you win the versus test by one or meet your obstacle in a " +
+          "standard test, you stagger your opponent: He's at +1 Ob to his next " +
+          "test, whatever it may be. If you win the versus test by two or exceed " +
+          "your obstacle in a standard test, you stagger your opponent and " +
+          "take the advantage so long as your weapon length is long or shorter. " +
+          "If you win the versus test by three or exceed your obstacle by two in " +
+          "a standard test, you knock your opponent down. He is off his feet " +
+          "and suffers the appropriate penalties until he rights himself.",
+          "Special": "Vhen you use this action you change weapons to your hands, " +
+          "unless you°re using a shield which uses the short weapon length."
+        },
+        {
+          "id": 15,
+          "name": "Lock",
+          "category": "Basic Actions",
+          "Test": "Lock tests Power. Lock uses the Hands weapon length.",
+          "Effect": "If you win the versus test by one or meet your obstacle in " +
+          "a standard test, you grab your opponent: His Agility, Speed, " +
+          "Power and Forte and his fighting, shooting and magical skills " +
+          "are all reduced by one die. Each additional success reduces your " +
+          "opponent°s abilities by another point. (Reflexes is not reduced.)",
+          "Pulled In": "If you manage to grab your opponent with a Lock, you pull " +
+          "him in. You have the advantage at the Hands fighting distance.",
+          "In Your Face": "If you successfully Lock your opponent, he may not use " +
+          "the Shooting and Throwing or Magic Actions with one exception: " +
+          "He may shoot if he°s using a pistol.",
+          "Increase the Pressure": "You can script multiple Lock actions and " +
+          "increase the value of your Lock on your opponent. You maintain " +
+          "your grip so long as your opponent fails to escape, you don’t hesitate " +
+          "or voluntarily let go. Each additional successful Lock test further " +
+          "reduces your opponent°s abilities by your margin of success.",
+          "Incapacitation": "If you reduce your opponent°s Agility, Speed, Power " +
+          "or Forte to zero dice, he is incapacitated. He may not resist or act " +
+          "in any fashion Lmtil you release hirn. Skills cannot be used at all.",
+          "Escaping Locks": "If you're in a Lock and wish to escape, use the Avoid " +
+          "action but replace Speed with Agility, Power or Forte (your choice). " +
+          "If scripted against a Dash interaction, test Avoid against Ob O, " +
+          "otherwise use the results of the versus test. Margin of success for the " +
+          "action reduces any standing Lock penalty. The dice are regained " +
+          "and may be used on the next action.",
+          "Special": "When you use this action you change weapons to yorn' hands.",
+          "Restriction": "You must have at least one hand free to perform this " +
+          "action. If you do not, you drop one item that you’re holding as you " +
+          "go for the grab. You cannot vie for position, engage or disengage " +
+          "until you've broken or let go of any locks."
+        },
+        {
+          "id": 16,
+          "name": "Get Up",
+          "category": "Basic Actions",
+          "Description": "Characters are always getting knocked down. lt requires two actions " +
+          "to get up from being laid flat. See the Knocked Down rules."
+        },
+        {
+          "id": 17,
+          "name": "Beat",
+          "category": "Special Actions",
+          "Test": "Weapon Skill",
+          "Effect": "If you meet the obstacle or win the versus test, you steal the " +
+          "advantage from your opponent. He now suffers the appropriate " +
+          "disadvantage according to your weapons and you gain an advantage " +
+          "to the positioning test at the start of the next exchange (provided " +
+          "you maintain advantage). If you already have the advantage, you " +
+          "can give your opponent a +1 Ob penalty to his next action or you " +
+          "can take +1D to your next action. You choose.",
+          "Special": "Gain a +1D advantage to the Beat test if you're using two " +
+          "hands on your weapon. You cannot hold anything in your off hand!"
+        },
+        {
+          "id": 18,
+          "name": "Disarm",
+          "category": "Special Actions",
+          "Test": "Weapon or Boxing Skill",
+          "Effect": "Disarm is a difficult action to pull off, but if successful its " +
+          "results are spectacular. If successful, you knock your opponent's " +
+          "weapon away. A successful Disarrn also grants you the advantage " +
+          "for your weapon.",
+          "Special Versus Test Rules": "ln order to Disarm someone in a versus test, " +
+          "you must win by a margin of success equal to his weapon skill—" +
+          "except in the case of Disarm vs Feint. Hence the + sign in the " +
+          "interactions tables for Disarm."
+        },
+        {
+          "id": 19,
+          "name": "Feint",
+          "category": "Special Actions",
+          "Test": "Weapon or Boxing Skill",
+          "Effect": "Feint is a special attack designed to defeat defenses. Feint does " +
+          "damage like a Strike. See the Weapons chapter for the damage rules."
+        },
+        {
+          "id": 20,
+          "name": "Throw Person",
+          "category": "Special Actions",
+          "Test": "Boxing Skill",
+          "Effect": "If you win the versus test by one or meet your obstacle in a " +
+          "standard test, you successfully throw your opponent off his feet and " +
+          "he suffers the appropriate penalties until he rights himself. You can " +
+          "choose how to spend additional successes: One additional success " +
+          "can be spent to do an Incidental bare—fisted hit or cause a Steel test. " +
+          "Two additional successes can be spent to cause a Mark hit or an " +
+          "Incidental and a Steel test. Four additional successes can be spent " +
+          "to deliver a Superb hit.",
+          "Restrictions": "You must have a hand free to perform this action. If you " +
+          "do not, you drop your weapon as you go for the grab."
         }
       ]
 
