@@ -491,6 +491,36 @@
           "Test": "Intimidation Ob = Will",
           "Effect": "If successful, target must test Steel. Your target hesitates for " +
           "one action per point of margin of failure."
+        },
+        {
+          "id": 33,
+          "name": "Stand and Drool",
+          "category": "Hesitation Actions",
+          "Description": "The character is stunned. He does nothing while hesitating."
+        },
+        {
+          "id": 34,
+          "name": "Fall Prone (and beg for mercy)",
+          "category": "Hesitation Actions",
+          "Description": "The character falls to his knees or stomach and pleads for his life in " +
+          "the name of compassion, honor, mercy or the gods."
+        },
+        {
+          "id": 35,
+          "name": "Run Screaming",
+          "category": "Hesitation Actions",
+          "Description": "The character drops what he is holding, turns about and bolts for the " +
+          "exit. If the hesitation crosses the top of the exchange, the player must " +
+          "choose to disengage. He does not have access to weapon length dice."
+        },
+        {
+          "id": 36,
+          "name": "Swoon",
+          "category": "Hesitation Actions",
+          "Description": "The character passes out. He°s out of the fight. If appropriate, he " +
+          "appears dead! He cannot be acted against unless another character " +
+          "pays special attention to him——to finish him, slit his throat, check his " +
+          "pulse or whatever."
         }
       ]
 
