@@ -472,6 +472,25 @@
           "category": "Magic Actions",
           "Description": "A summoner may command a spirit using Spirit Binding during a " +
           "fight. It only costs one action, but it’s very risky. See the Magic Burner."
+        },
+        {
+          "id": 31,
+          "name": "Command",
+          "category": "Social Actions",
+          "Action Cost": "Commanding another character to get back into the fight " +
+          "costs two actions.",
+          "Effect": "Command can help reduce hesitation. See the Command skill " +
+          "description for the rules."
+        },
+        {
+          "id": 32,
+          "name": "Intimidate",
+          "category": "Social Actions",
+          "Action Cost": "Using the Intimidation skill on another character in a melee " +
+          "costs two actions.",
+          "Test": "Intimidation Ob = Will",
+          "Effect": "If successful, target must test Steel. Your target hesitates for " +
+          "one action per point of margin of failure."
         }
       ]
 
