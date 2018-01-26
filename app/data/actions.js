@@ -84,7 +84,7 @@
           "name": "Great Strike",
           "category": "Attack Actions",
           "Test": "Weapon, Brawling, Boxing",
-          "restrictions": "Great Strike costs two actions to perform. On the first action, you take a breath " +
+          "Restrictions": "Great Strike costs two actions to perform. On the first action, you take a breath " +
           "to set up your attack. You are effectively defenseless on this action; you count as Stand and Drool " +
           "hesitating. Also, while any weapon can perform a Great Strike, you must be able to put two hands on the " +
           "weapon to do so. A Great Strike counts as one action against your weapon speed limitation.",
@@ -105,7 +105,7 @@
           "both parts of the actions. Any advantages are only applied to one side. " +
           "You don't have to allocate any skill dice to defense, you can rely solely on your shield to protect you. " +
           "Disadvantage from weapon length or vying for position only applies to the Strike portion.",
-          "interactions": "Block and Strike counts as Block and a Strike for the purposes of interactions. " +
+          "Interactions": "Block and Strike counts as Block and a Strike for the purposes of interactions. " +
           "Test your divided pool against the possible interactions for both of those actions. Against Counterstrike, " +
           "both characters defend and both attack according to their action."
         },
@@ -116,6 +116,54 @@
           "Test": "Savage Attack",
           "Effect": "Successes over the obstacle count as damage as per the standard IMS damage rules and as a Lock " +
           "as per the Lock action."
+        },
+        {
+          "id:": 5,
+          "name": "Avoid",
+          "category": "Defensive Actions",
+          "Test": "Speed",
+          "Effect": "Successes from the Avoid action reduce the effectiveness of " +
+          "the opposing action. If you roll one success on an Avoid, and your " +
+          "opponent rolls two, you°ve reduced his effective total to one. If you " +
+          "roll two and he rolls two, you have stopped his action altogether.",
+          "Special": "Avoid defends against all incoming attack, basic and special " +
+          "actions. Test once; let Avoid successes ride for the action. Avoid is " +
+          "special: it never suffers a double—obstacle penalty for being unskilled. " +
+          "It does not protect against Shooting, Throwing or Magical Actions."
+        },
+        {
+          "id:": 6,
+          "name": "Block",
+          "category": "Defensive Actions",
+          "Test": "Weapon, Brawling, or Boxing",
+          "Effect": "Block deflects and redirects the incoming attack. Like Avoid, " +
+          "your successes reduce the effectiveness of the opposed action. Each " +
+          "Block success reduces your opponent°s total. If you roll successes " +
+          "equal to your opponent, you°ve stopped his action completely. If " +
+          "you roll additional successes, you can spend your margin of success " +
+          "as follows:" +
+            "\n - One extra success: +1D to your next action or, to vying for position " +
+          "if Block is your last action of the exchange)." +
+            "\n - Two extra successes: +1 Ob to the blocked character°s next action." +
+            "\n - Three extra successes: Blocked character loses his next action. He " +
+          "hesitates, but may only Stand and Drool as a result.",
+          "Note": "These effects can only be generated through the use of the " +
+          "Block action. Counterstrike, Change Stance and the Block & Strike " +
+          "actions do not gain these extra effects."
+        },
+        {
+          "id:": 8,
+          "name": "Counterstrike",
+          "category": "Defensive Actions",
+          "Test": "Your Weapon, Brawling or Boxing skill. After " +
+          "actions are revealed, but before your opponent rolls, divide your " +
+          "fighting skill and any advantages into two pools—one for defense " +
+          "and one for attack.",
+          "Effect": "In versus tests, use the defensive portion to oppose your " +
+          "opponent’s action. Successes from yo1u' defense reduce his successes. " +
+          "The attack portion counts as a Strike action. However, the Strike " +
+          "portion of Counterstrike doesn°t suffer disadvantages from weapon " +
+          "length or vying for position."
         }
       ]
 
