@@ -368,6 +368,81 @@
           "to deliver a Superb hit.",
           "Restrictions": "You must have a hand free to perform this action. If you " +
           "do not, you drop your weapon as you go for the grab."
+        },
+        {
+          "id": 21,
+          "name": "Throw Object/Weapon",
+          "category": "Shooting and Throwing Actions",
+          "Action Cost": "It costs two actions to throw a weapon like a knife or stone",
+          "Test": "Test Throwing skill. lt°s an Ob 2 test to hit plus disadvantages " +
+          "from vying for position, weather and light.",
+          "Restrictions": "Once you throw, you cede advantage to your target"
+        },
+        {
+          "id": 22,
+          "name": "Aim",
+          "category": "Shooting and Throwing Actions",
+          "Special": "A player may spend actions aiming a loaded and ready " +
+          "weapon—a knife in the hand, nocked and drawn bow, a loaded " +
+          "gun, etc. Each action spent gives a +1D advantage. Characters may " +
+          "aim for as many actions as half their Perception exponent rounded " +
+          "up. When aiming with a crossbow, gun or thrown weapon, script " +
+          "your Aim actions first, then script your Throw or Fire actions. " +
+          "When aiming a bow, put your Aim actions after your Nook and " +
+          "Draw actions, before you script Release."
+        },
+        {
+          "id": 23,
+          "name": "Nock Arrow and Draw Bow",
+          "category": "Shooting and Throwing Actions",
+          "Effect": "This extended action readies your bow to shoot. Each type of " +
+          "bow has a different load time: Hunting bow, 5 actions; Elven bow, 5 " +
+          "actions; Great bow, 7 actions. To hit your target, script the Release " +
+          "action after Nook and Draw.",
+          "Special": "You can prep a bow and keep it ready by spending three " +
+          "actions to nock the arrow. Then when you waitt to get down to " +
+          "business, you can pay the remainder of the Nook and Draw action " +
+          "to finish readying it. “Always keep an arrow nocked“ is a good \n" +
+          "Instinct."
+        },
+        {
+          "id": 24,
+          "name": "Reload Crossbow or Gun",
+          "category": "Shooting and Throwing Actions",
+          "Special": "Crossbows and pistols require 16 actions to draw and load. " +
+          "Heavy crossbows and muskets require 32 actions."
+        },
+        {
+          "id": 25,
+          "name": "Fire Gun or Crossbow",
+          "category": "Shooting and Throwing Actions",
+          "Action Cost": "It costs two actions to fire a gun or crossbow in combat.",
+          "Test": "Firearms or Crossbow skill as appropriate. lt°s an Ob 2 test to " +
+          "hit with a gun (plus disadvantages for vying for position, light and " +
+          "weather).",
+          "Restrictions": "Once you fire, you cede advantage to your target"
+        },
+        {
+          "id": 26,
+          "name": "Release Bow",
+          "category": "Shooting and Throwing Actions",
+          "Action Cost": "One action is required to release an arrow from your bow.",
+          "Test": "Bow skill against Ob l plus disadvantages for vying for position " +
+          "wounds and other appropriate conditions.",
+          "Restrictions": "Once your arow is released, you cede advantage to your target"
+        },
+        {
+          "id": 27,
+          "name": "Release Bow",
+          "category": "Shooting and Throwing Actions",
+          "Description": "You can use a snapshot with a bow, crossbow, gun or thrown weap on.",
+          "Effect": "For a crossbow, gun or thrown weapon, a snapshot costs one " +
+          "action. For a bow of any type, a snapshot reduces your draw and " +
+          "nock time by one action. It allows you to release one action sooner.",
+          "Test": "Snapshot is an Ob 4 test for the Bow, Crossbow, Firearms, or " +
+          "Throwing skill.",
+          "Restriction": "You may not aim a Snapshot, and once you snap that shot " +
+          "off, you cede advantage to your opponent."
         }
       ]
 
