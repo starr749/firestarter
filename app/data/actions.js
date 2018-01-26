@@ -443,6 +443,35 @@
           "Throwing skill.",
           "Restriction": "You may not aim a Snapshot, and once you snap that shot " +
           "off, you cede advantage to your opponent."
+        },
+        {
+          "id": 28,
+          "name": "Cast Spell",
+          "category": "Magic Actions",
+          "Special": "Spells take a number of actions to perform. Spell actions must " +
+          "be performed continuously and without interruption (otherwise " +
+          "bad things happen). Spells have weapon lengths. See the Sorcery " +
+          "chapter for details. Spell casting suffers from weapon length and " +
+          "vying for position disadvantage penalties at the time of its release. " +
+          "if you have the advantage, there's no worry. If you’ve lost (or never " +
+          "gained) the advantage, apply the appropriate obstacle penalties.",
+          "Test": "Sorcery or appropriate spell-casting skill after the sorcerer has " +
+          "spent the prerequisite actions casting the spell.",
+          "Effect": "Spells l1ave effects listed in their individual descriptions."
+        },
+        {
+          "id": 29,
+          "name": "Drop Spell",
+          "category": "Magic Actions",
+          "Special": "If a caster no longer wishes to concentrate on a spell being " +
+          "sustained, it costs one action to drop it."
+        },
+        {
+          "id": 30,
+          "name": "Command Spirit",
+          "category": "Magic Actions",
+          "Description": "A summoner may command a spirit using Spirit Binding during a " +
+          "fight. It only costs one action, but it’s very risky. See the Magic Burner."
         }
       ]
 
