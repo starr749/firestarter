@@ -1,7 +1,6 @@
 <div class="jumbotron">
   <h1>Fight!</h1>
   <!--<p class="lead">-->
-    <!--A quick Burning Wheel Fight! Resolution Tool.-->
   <!--</p>-->
   <!--<p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>-->
 </div>
@@ -29,15 +28,75 @@
 <div class="row marketing">
   <div class="col-sm-6">
     <h5>Resulting Player 1 Interaction</h5>
-    <div class="well">
-      <p>{{player1int}}</p>
+    <div class="">
+      <table class="table table-striped">
+        <tbody>
+        <tr>
+          <th scope="row">Test</th>
+          <td>{{player1int}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+
+        <div ng-repeat="(key, value) in player1act">
+          <div ng-show="isShowableInfo(key)" class="panel panel-default">
+            <div class="panel-heading" role="tab" id="p1{{ key.split(' ').join('_') }}">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="false" aria-controls="collapseOne" data-target="#p1{{key.split(' ').join('_')}}info">
+                  {{ key }}
+                </a>
+              </h4>
+            </div>
+            <div id="p1{{key.split(' ').join('_')}}info" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ key.replace(' ', '_') }}">
+              <div class="panel-body">
+                {{ value }}
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
     </div>
   </div>
 
   <div class="col-sm-6">
     <h5>Resulting Player 2 Interaction</h5>
-    <div class="well">
-      <p>{{player2int}}</p>
+    <div class="">
+      <table class="table table-striped">
+        <tbody>
+        <tr>
+          <th scope="row">Test</th>
+          <td>{{player2int}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+
+        <div ng-repeat="(key, value) in player2act">
+          <div ng-show="isShowableInfo(key)" class="panel panel-default">
+            <div class="panel-heading" role="tab" id="p2{{ key.split(' ').join('_') }}">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="false" aria-controls="collapseOne" data-target="#p2{{key.replace(' ', '_')}}info">
+                  {{ key }}
+                </a>
+              </h4>
+            </div>
+            <div id="p2{{ key.split(' ').join('_') }}info" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ key.split(' ').join('_') }}">
+              <div class="panel-body">
+                {{ value }}
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
