@@ -8,28 +8,35 @@
  * Controller of the burnfightApp
  */
 angular.module('firestarterApp')
-  .controller('FightCtrl',['$scope', '$http', 'ACTIONS', 'INTERACTIONS', function ($scope, $http, ACTIONS, INTERACTIONS) {
+  .controller('FightCtrl',['$scope', '$http', 'ACTIONS', 'INTERACTIONS', 'ADVANTAGES', 'DISADVANTAGES', function ($scope, $http, ACTIONS, INTERACTIONS, ADVANTAGES, DISADVANTAGES) {
 
     var ctrl = this;
 
-    $scope.aggressiveStance = { "name": "aggressive", "text":  "Aggressive stance grants +2D to Strike and Great " +
-      "Strike. Block and Counterstrike suffer +2 Ob penalty. You may not " +
+    $scope.aggressiveStance = { "name": "aggressive", "text":  "<p>Aggressive stance grants +2D to Strike and Great " +
+      "Strike.</p> <p>Block and Counterstrike suffer +2 Ob penalty.</p> <p>You may not " +
       "Avoid. If you accidently script Avoid while in aggressive stance, " +
-      "you hesitate for all action."};
-    $scope.neutralStance = {"name": "neutral", "text": "Neutral stance is the default. You start a fight in neutral " +
-      "stance unless otherwise noted. It grants no advantage and suffers no " +
-      "disadvantages." };
-    $scope.defensiveStance = { "name": "defensive", "text": "Defensive stance grants +2D to Avoid, Block and " +
-      "Counterstrike. Strike and Great Strike suffer a +2 Ob penalty when " +
-      "performed from defensive stance."};
+      "you hesitate for all action.</p>"};
+    $scope.neutralStance = {"name": "neutral", "text": "<p>Neutral stance is the default. You start a fight in neutral " +
+      "stance unless otherwise noted.</p> <p>It grants no advantage and suffers no " +
+      "disadvantages.</p>" };
+    $scope.defensiveStance = { "name": "defensive", "text": "<p>Defensive stance grants +2D to Avoid, Block and " +
+      "Counterstrike.</p> <p>Strike and Great Strike suffer a +2 Ob penalty when " +
+      "performed from defensive stance.</p>"};
 
 
 
     $scope.player1 = {};
     $scope.player2 = {};
 
+    $scope.player1.modifications = [];
+    $scope.player2.modifications = [];
+
     ctrl.actions = ACTIONS.fight;
     ctrl.interactions = INTERACTIONS.fight;
+    ctrl.advantage = ADVANTAGES.position;
+    ctrl.disadvantage = DISADVANTAGES.position;
+
+    ctrl.position = "";
 
     ctrl.player1int = "";
     ctrl.player2int = "";
@@ -44,6 +51,54 @@ angular.module('firestarterApp')
 
     $scope.changeStanceP2 = function(newStance) {
       $scope.player2.stance = newStance;
+    };
+
+    $scope.p1range = function(range) {
+      $scope.player1.range = range;
+    };
+
+    $scope.p2range = function (range) {
+      $scope.player2.range = range;
+    };
+
+    $scope.resetAdvantages = function() {
+      $scope.player1.modifications = [];
+      $scope.player2.modifications = [];
+    };
+
+    $scope.calculatePositionAdvantage = function(advantagedPlayer) {
+
+      $scope.player1.modifications = $scope.player1.modifications.filter(function(el) {
+        return el.key !== "Positioning";
+      });
+
+      $scope.player2.modifications = $scope.player2.modifications.filter(function(el) {
+        return el.key !== "Positioning";
+      });
+
+      if($scope.player1.range != null && $scope.player2.range != null) {
+
+        if (advantagedPlayer == "player1") {
+          $scope.player1.modifications.push({
+            "key": "Positioning",
+            "value": ctrl.advantage[$scope.player1.range][$scope.player2.range]
+          });
+          $scope.player2.modifications.push({
+            "key": "Positioning",
+            "value": ctrl.disadvantage[$scope.player1.range][$scope.player2.range]
+          });
+        }
+        else if(advantagedPlayer == "player2") {
+          $scope.player2.modifications.push({
+            "key": "Positioning",
+            "value": ctrl.advantage[$scope.player2.range][$scope.player1.range]
+          });
+          $scope.player1.modifications.push({
+            "key": "Positioning",
+            "value": ctrl.disadvantage[$scope.player2.range][$scope.player1.range]
+          });
+        }
+      }
     };
 
     $scope.update = function() {

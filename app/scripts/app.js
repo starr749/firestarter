@@ -19,7 +19,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.select',
-    'actions'
+    'actions',
+    'fightAdvantages'
   ])
   .config(function ($routeProvider) {
     $routeProvider
