@@ -42,11 +42,14 @@ angular.module('firestarterApp')
 
     $scope.player1.modifications = [];
     $scope.player2.modifications = [];
+    $scope.player1.injuries = [];
+    $scope.player2.injuries = [];
 
     ctrl.actions = ACTIONS.fight;
     ctrl.interactions = INTERACTIONS.fight;
     ctrl.advantage = ADVANTAGES.position;
     ctrl.disadvantage = DISADVANTAGES.position;
+    ctrl.injuries = DISADVANTAGES.injury;
 
     ctrl.position = "";
 
@@ -55,6 +58,26 @@ angular.module('firestarterApp')
 
     $scope.player1.stance = $scope.neutralStance;
     $scope.player2.stance = $scope.neutralStance;
+
+    $scope.addInjury = function(player, injury) {
+        player.injuries.push(ctrl.injuries[injury])
+        updateInjuryMods(player);
+    }
+
+    $scope.clearInjury = function(player) {
+      player.injuries = [];
+      updateInjuryMods(player);
+    }
+
+    var updateInjuryMods = function(player) {
+      filterMods(player, "Injury");
+      player.injuries.forEach(function(injury) {
+        player.modifications.push({
+          "key": "Injury",
+          "value": capitalize(injury.level) + "Wound: " + injury.effect
+        });
+      });
+    }
 
     $scope.changeStance = function (player, newStance) {
       player.stance = newStance;
@@ -138,7 +161,7 @@ angular.module('firestarterApp')
       }
     };
 
-    $scope.capilatize = function (str) {
+    var capitalize = function (str) {
       return str.split(/\s+/).map(w => w[0].toUpperCase() + w.slice(1)).join(' ');
     }
 
@@ -147,9 +170,6 @@ angular.module('firestarterApp')
       if ((ctrl.p1Action === undefined) || (ctrl.p2Action === undefined)) {
         return;
       }
-
-      // $scope.player1int = ctrl.p1Action.selected.resolveFunction(ctrl.p2Action.selected);
-      // $scope.player2int = ctrl.p2Action.selected.resolveFunction(ctrl.p1Action.selected);
 
       $scope.player1act = ctrl.p1Action.selected;
       $scope.player2act = ctrl.p2Action.selected;

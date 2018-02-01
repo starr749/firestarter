@@ -106,6 +106,13 @@
           "longest": "+1 Ob",
           "missle": "-"
         }
+      },
+      "injury": {
+        "superficial":{"level": "superficial", "effect": "+1 Ob"},
+        "light": {"level": "light", "effect": "-1D"},
+        "midi": {"level": "midi", "effect": "-2D"},
+        "severe": {"level": "severe", "effect": "-3D"},
+        "traumatic": {"level": "traumatic", "effect": "-4D"}
       }
     });
 

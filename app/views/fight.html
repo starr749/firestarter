@@ -225,6 +225,70 @@
         </div>
       </div>
     </div>
-  
-  
   </div>
+
+  <div class="row marketing">
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Injury" aria-expanded="false" aria-controls="p1Injury">
+                <h3 class="panel-title">Add Injury</h3>
+              </div>
+          <div class="panel-body collapse" id="p1Injury">
+            <div class="panel-body">
+                <div class="row" style="margin-bottom: 10px;">
+                    <button class="col-sm-2 col-sm-offset-9 btn btn-xs btn-danger" id="p2resetInjury" ng-value="" ng-click="clearInjury(player1)">Reset</button>
+                  </div>
+              <div class="btn-group-vertical" role="group" aria-label="p1Injury" data-toggle="buttons" style="width:100%">
+                <button class="btn btn-sm btn-default" id="p1addSuperficial" ng-value="" ng-click="addInjury(player1, 'superficial')">Superficial Wound: +1 Ob</button>
+                <button class="btn btn-sm btn-info" id="p1addLight" ng-value="" ng-click="addInjury(player1, 'light')">Light Wound: -1D</button>
+                <button class="btn btn-sm btn-primary" id="p1addMidi" ng-value="" ng-click="addInjury(player1, 'midi')">Midi Wound: -2D</button>
+                <button class="btn btn-sm btn-warning" id="p1addSevere" ng-value="" ng-click="addInjury(player1, 'severe')">Severe Wound: -3D</button>
+                <button class="btn btn-sm btn-danger" id="p1addTraumatic" ng-value="" ng-click="addInjury(player1, 'traumatic')">Traumatic Wound: -4D</button>
+              </div>
+            </div>
+            <div class="panel-body">
+                <h5>Anytime a character suffers a -1D or greater injury, he must make a Steel
+                test.</h5> 
+                <h6>The severity of the wound is subtracted from Steel before the test is
+                made. This includes the third superficial wound (equalling —1D).</h6>
+                
+                <h6>Hesitation caused from pain takes effect immediately, interrupting
+                anything the character was doing. (The next action and those following
+                are lost if he hesitates.)</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Injury" aria-expanded="false" aria-controls="p2Injury">
+                <h3 class="panel-title">Add Injury</h3>
+              </div>
+          <div class="panel-body collapse" id="p2Injury">
+            <div class="panel-body">
+                <div class="row" style="margin-bottom: 10px;">
+                    <button class="col-sm-2 col-sm-offset-9 btn btn-xs btn-danger" id="p2resetInjury" ng-value="" ng-click="clearInjury(player2)">Reset</button>
+                  </div>
+                <div class="btn-group-vertical" role="group" aria-label="p2Injury" data-toggle="buttons" style="width:100%">
+                  <button class="btn btn-sm btn-default" id="p2addSuperficial" ng-value="" ng-click="addInjury(player2, 'superficial')">Superficial Wound: +1 Ob</button>
+                  <button class="btn btn-sm btn-info" id="p2addLight" ng-value="" ng-click="addInjury(player2, 'light')">Light Wound: -1D</button>
+                  <button class="btn btn-sm btn-primary" id="p2addMidi" ng-value="" ng-click="addInjury(player2, 'midi')">Midi Wound: -2D</button>
+                  <button class="btn btn-sm btn-warning" id="p2addSevere" ng-value="" ng-click="addInjury(player2, 'severe')">Severe Wound: -3D</button>
+                  <button class="btn btn-sm btn-danger" id="p2addTraumatic" ng-value="" ng-click="addInjury(player2, 'traumatic')">Traumatic Wound: -4D</button>
+  
+                </div>
+              </div>
+              <div class="panel-body">
+                  <h5>Anytime a character suffers a -1D or greater injury, he must make a Steel
+                  test.</h5> 
+                  <h6>The severity of the wound is subtracted from Steel before the test is
+                  made. This includes the third superficial wound (equalling —1D).</h6>
+                  
+                  <h6>Hesitation caused from pain takes effect immediately, interrupting
+                  anything the character was doing. (The next action and those following
+                  are lost if he hesitates.)</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
