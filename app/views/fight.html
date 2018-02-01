@@ -29,7 +29,7 @@
       </div>
       <div ng-repeat="mod in player1.modifications">
         <hr />
-        <h6>- {{mod.key}}:{{mod.value}}</h6>
+        <h6>- {{mod.key}}: {{mod.value}}</h6>
       </div>
     </div>
   </div>
@@ -56,81 +56,11 @@
       </div>
       <div ng-repeat="mod in player2.modifications">
         <hr />
-        <h6>- {{mod.key}}:{{mod.value}}</h6>
+        <h6>- {{mod.key}}: {{mod.value}}</h6>
       </div>
     </div>
   </div>
 </div>
-
-<div class="panel panel-default">
-  <div class="panel-heading" type="button" data-toggle="collapse" data-target="#engagement" aria-expanded="false" aria-controls="engagement">
-    <h3 class="panel-title">Engagement</h3>
-  </div>
-  <div class="panel-body collapse" id="engagement">
-    <div class="panel-body text-center">
-
-      <h4>Test for Engage</h4>
-      <p>Speed plus advantages for longer stride and longer weapon.</p>
-      <h4>Bonus Dice to Engage Tests</h4>
-      <p>- Longer stride +1D</p>
-      <p>- Stride longer by 4 or more +2D</p>
-      <p>- Longer Weapon +1D or +2D</p>
-
-      <div class="well">
-        <h4>Position Advantage</h4>
-        <div class="btn-group" data-toggle="buttons">
-          <button class="btn btn-danger" id="p1positionAdv" ng-click="calculatePositionAdvantage('player1')">Player 1</button>
-          <button class="btn btn-info" id="p2positionAdv" ng-click="calculatePositionAdvantage('player2')">Player 2</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="row marketing">
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Stance" aria-expanded="false" aria-controls="p1Stance">
-        <h3 class="panel-title">Stance</h3>
-      </div>
-      <div class="panel-body collapse" id="p1Stance">
-        <div class="panel-body">
-          <div class="btn-group" data-toggle="buttons">
-            <button class="btn btn-danger" id="p1stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player1, aggressiveStance)">Aggressive</button>
-            <button class="btn btn-info" id="p1stanceNeutral" ng-value="aggressiveStance" ng-click="changeStance(player1, neutralStance)">Neutral</button>
-            <button class="btn btn-success" id="p1stanceDefensive" ng-value="aggressiveStance" ng-click="changeStance(player1, defensiveStance)">Defensive</button>
-          </div>
-        </div>
-        <div ng-bind-html="player1.stance.text" class="panel-body">
-          {{ player1.stance.text }}
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Stance" aria-expanded="false" aria-controls="p2Stance">
-        <h3 class="panel-title">Stance</h3>
-      </div>
-      <div class="panel-body collapse" id="p2Stance">
-        <div class="panel-body">
-          <div class="btn-group" data-toggle="buttons">
-            <button class="btn btn-danger" id="p2stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player2, aggressiveStance)">Aggressive</button>
-            <button class="btn btn-info" id="p2stanceNeutral" ng-value="aggressiveStance" ng-click="changeStance(player2, neutralStance)">Neutral</button>
-            <button class="btn btn-success" id="p2stanceDefensive" ng-value="aggressiveStance" ng-click="changeStance(player2, defensiveStance)">Defensive</button>
-          </div>
-        </div>
-        <div ng-bind-html="player2.stance.text" class="panel-body">
-          {{ player2.stance.text }}
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-</div>
-
 
 <div class="row marketing">
   <div class="col-sm-6">
@@ -229,3 +159,72 @@
     </div>
   </div>
 </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading" type="button" data-toggle="collapse" data-target="#engagement" aria-expanded="false" aria-controls="engagement">
+      <h3 class="panel-title">Engagement</h3>
+    </div>
+    <div class="panel-body collapse" id="engagement">
+      <div class="panel-body text-center">
+  
+        <h4>Test for Engage</h4>
+        <p>Speed plus advantages for longer stride and longer weapon.</p>
+        <h4>Bonus Dice to Engage Tests</h4>
+        <p>- Longer stride +1D</p>
+        <p>- Stride longer by 4 or more +2D</p>
+        <p>- Longer Weapon +1D or +2D</p>
+  
+        <div class="well">
+          <h4>Position Advantage</h4>
+          <div class="btn-group" data-toggle="buttons">
+            <button class="btn btn-danger" id="p1positionAdv" ng-click="calculatePositionAdvantage('player1')">Player 1</button>
+            <button class="btn btn-info" id="p2positionAdv" ng-click="calculatePositionAdvantage('player2')">Player 2</button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <div class="row marketing">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Stance" aria-expanded="false" aria-controls="p1Stance">
+          <h3 class="panel-title">Stance</h3>
+        </div>
+        <div class="panel-body collapse" id="p1Stance">
+          <div class="panel-body">
+            <div class="btn-group" data-toggle="buttons">
+              <button class="btn btn-danger" id="p1stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player1, aggressiveStance)">Aggressive</button>
+              <button class="btn btn-info" id="p1stanceNeutral" ng-value="aggressiveStance" ng-click="changeStance(player1, neutralStance)">Neutral</button>
+              <button class="btn btn-success" id="p1stanceDefensive" ng-value="aggressiveStance" ng-click="changeStance(player1, defensiveStance)">Defensive</button>
+            </div>
+          </div>
+          <div ng-bind-html="player1.stance.text" class="panel-body">
+            {{ player1.stance.text }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Stance" aria-expanded="false" aria-controls="p2Stance">
+          <h3 class="panel-title">Stance</h3>
+        </div>
+        <div class="panel-body collapse" id="p2Stance">
+          <div class="panel-body">
+            <div class="btn-group" data-toggle="buttons">
+              <button class="btn btn-danger" id="p2stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player2, aggressiveStance)">Aggressive</button>
+              <button class="btn btn-info" id="p2stanceNeutral" ng-value="aggressiveStance" ng-click="changeStance(player2, neutralStance)">Neutral</button>
+              <button class="btn btn-success" id="p2stanceDefensive" ng-value="aggressiveStance" ng-click="changeStance(player2, defensiveStance)">Defensive</button>
+            </div>
+          </div>
+          <div ng-bind-html="player2.stance.text" class="panel-body">
+            {{ player2.stance.text }}
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  </div>

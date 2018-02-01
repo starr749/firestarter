@@ -18,7 +18,7 @@ angular.module('firestarterApp')
         "Strike.</p> <p>Block and Counterstrike suffer +2 Ob penalty.</p> <p>You may not " +
         "Avoid. If you accidently script Avoid while in aggressive stance, " +
         "you hesitate for all action.</p>",
-      "mods": ["+2D to Strike and Great Strike", "+2 Ob to Block and CounterStrike can't Avoid"]
+      "mods": ["+2D to Strike and Great Strike", "+2 Ob to Block and CounterStrike.", "Can't Avoid"]
     };
     $scope.neutralStance = {
       "name": "neutral",
@@ -32,7 +32,7 @@ angular.module('firestarterApp')
       "text": "<p>Defensive stance grants +2D to Avoid, Block and " +
         "Counterstrike.</p> <p>Strike and Great Strike suffer a +2 Ob penalty when " +
         "performed from defensive stance.</p>",
-        "mods": ["+2D to Avoid, Block, and Counterstrike", "+2 Ob to Strike and Great Strike"]
+      "mods": ["+2D to Avoid, Block, and Counterstrike", "+2 Ob to Strike and Great Strike"]
     };
 
 
@@ -59,7 +59,7 @@ angular.module('firestarterApp')
     $scope.changeStance = function (player, newStance) {
       player.stance = newStance;
       filterMods(player, "Stance");
-      newStance.mods.forEach(function(mod) {
+      newStance.mods.forEach(function (mod) {
         player.modifications.push({
           "key": "Stance",
           "value": mod
@@ -108,24 +108,32 @@ angular.module('firestarterApp')
       if ($scope.player1.range != null && $scope.player2.range != null) {
 
         if (advantagedPlayer == "player1") {
-          $scope.player1.modifications.push({
-            "key": "Positioning",
-            "value": ctrl.advantage[$scope.player1.range][$scope.player2.range]
-          });
-          $scope.player2.modifications.push({
-            "key": "Positioning",
-            "value": ctrl.disadvantage[$scope.player1.range][$scope.player2.range]
-          });
+          if (ctrl.advantage[$scope.player1.range][$scope.player2.range] !== "-") {
+            $scope.player1.modifications.push({
+              "key": "Positioning",
+              "value": ctrl.advantage[$scope.player1.range][$scope.player2.range]
+            });
+          }
+          if (ctrl.disadvantage[$scope.player1.range][$scope.player2.range] !== "-") {
+            $scope.player2.modifications.push({
+              "key": "Positioning",
+              "value": ctrl.disadvantage[$scope.player1.range][$scope.player2.range]
+            });
+          }
         }
         else if (advantagedPlayer == "player2") {
-          $scope.player2.modifications.push({
-            "key": "Positioning",
-            "value": ctrl.advantage[$scope.player2.range][$scope.player1.range]
-          });
-          $scope.player1.modifications.push({
-            "key": "Positioning",
-            "value": ctrl.disadvantage[$scope.player2.range][$scope.player1.range]
-          });
+          if (ctrl.advantage[$scope.player2.range][$scope.player1.range] !== "-") {
+            $scope.player2.modifications.push({
+              "key": "Positioning",
+              "value": ctrl.advantage[$scope.player2.range][$scope.player1.range]
+            });
+          }
+          if (ctrl.disadvantage[$scope.player2.range][$scope.player1.range] !== "-") {
+            $scope.player1.modifications.push({
+              "key": "Positioning",
+              "value": ctrl.disadvantage[$scope.player2.range][$scope.player1.range]
+            });
+          }
         }
       }
     };
@@ -135,8 +143,6 @@ angular.module('firestarterApp')
     }
 
     $scope.update = function () {
-
-      console.log($scope.player2);
 
       if ((ctrl.p1Action === undefined) || (ctrl.p2Action === undefined)) {
         return;
