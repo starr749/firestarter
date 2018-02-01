@@ -5,52 +5,52 @@
     {
       "position": {
         "shortest": {
-          "shortest": "-",
-          "short": "+1D",
-          "long": "+2D",
-          "longer": "+2D",
-          "longest": "+2D",
-          "missle": "+2D"
+          "shortest": {"text": "-"},
+          "short": {"text": "+1D"},
+          "long": {"text": "+2D"},
+          "longer": {"text": "+2D"},
+          "longest": {"text": "+2D"},
+          "missle": {"text": "+2D"}
           },
         "short": {
-          "shortest": "+1D",
-          "short": "-",
-          "long": "-",
-          "longer": "+1D",
-          "longest": "+2D",
-          "missle": "+2D"
+          "shortest": {"text": "+1D"},
+          "short": {"text": "-"},
+          "long": {"text": "-"},
+          "longer": {"text": "+1D"},
+          "longest": {"text": "+2D"},
+          "missle": {"text": "+2D"}
         },
         "long": {
-          "shortest": "+2D",
-          "short": "+1D",
-          "long": "-",
-          "longer": "-",
-          "longest": "+2D",
-          "missle": "+2D"
+          "shortest": {"text": "+2D"},
+          "short": {"text": "+1D"},
+          "long": {"text": "-"},
+          "longer": {"text": "-"},
+          "longest": {"text": "+2D"},
+          "missle": {"text": "+2D"}
         },
         "longer": {
-          "shortest": "+2D",
-          "short": "+2D",
-          "long": "+1D",
-          "longer": "-",
-          "longest": "-",
-          "missle": "+1D"
+          "shortest": {"text": "+2D"},
+          "short": {"text": "+2D"},
+          "long": {"text": "+1D"},
+          "longer": {"text": "-"},
+          "longest": {"text": "-"},
+          "missle": {"text": "+1D"}
         },
         "longest": {
-          "shortest": "+2D",
-          "short": "+2D",
-          "long": "+2D",
-          "longer": "+1D",
-          "longest": "-",
-          "missle": "-"
+          "shortest": {"text": "+2D"},
+          "short": {"text": "+2D"},
+          "long": {"text": "+2D"},
+          "longer": {"text": "+1D"},
+          "longest": {"text": "-"},
+          "missle": {"text": "-"}
         },
         "missle": {
-          "shortest": "+2D",
-          "short": "+2D",
-          "long": "+2D",
-          "longer": "+2D",
-          "longest": "+1D",
-          "missle": "-"
+          "shortest": {"text": "+2D"},
+          "short": {"text": "+2D"},
+          "long": {"text": "+2D"},
+          "longer": {"text": "+2D"},
+          "longest": {"text": "+1D"},
+          "missle": {"text": "-"}
         }
       }
     });
@@ -59,61 +59,61 @@
     {
       "position": {
         "shortest": {
-          "shortest": "-",
-          "short": "+1 Ob",
-          "long": "+2 Ob",
-          "longer": "+3 Ob",
-          "longest": "+4 Ob",
-          "missle": "+5 Ob"
+          "shortest": {"text": "-"},
+          "short": {"text": "+1 Ob"},
+          "long": {"text": "+2 Ob"},
+          "longer": {"text": "+3 Ob"},
+          "longest": {"text": "+4 Ob"},
+          "missle": {"text": "+5 Ob"}
         },
         "short": {
-          "shortest": "+1 Ob",
-          "short": "-",
-          "long": "-",
-          "longer": "+1 Ob",
-          "longest": "+2 Ob",
-          "missle": "+3 Ob"
+          "shortest": {"text": "+1 Ob"},
+          "short": {"text": "-"},
+          "long": {"text": "-"},
+          "longer": {"text": "+1 Ob"},
+          "longest": {"text": "+2 Ob"},
+          "missle": {"text": "+3 Ob"}
         },
         "long": {
-          "shortest": "+2 Ob",
-          "short": "+1 Ob",
-          "long": "-",
-          "longer": "-",
-          "longest": "+1 Ob",
-          "missle": "+2 Ob"
+          "shortest": {"text": "+2 Ob"},
+          "short": {"text": "+1 Ob"},
+          "long": {"text": "-"},
+          "longer": {"text": "-"},
+          "longest": {"text": "+1 Ob"},
+          "missle": {"text": "+2 Ob"}
         },
         "longer": {
-          "shortest": "+3 Ob",
-          "short": "+2 Ob",
-          "long": "+1 Ob",
-          "longer": "-",
-          "longest": "-",
-          "missle": "+1 Ob"
+          "shortest": {"text": "+3 Ob"},
+          "short": {"text": "+2 Ob"},
+          "long": {"text": "+1 Ob"},
+          "longer": {"text": "-"},
+          "longest": {"text": "-"},
+          "missle": {"text": "+1 Ob"}
         },
         "longest": {
-          "shortest": "+4 Ob",
-          "short": "+3 Ob",
-          "long": "+2 Ob",
-          "longer": "+1 Ob",
-          "longest": "-",
-          "missle": "-"
+          "shortest": {"text": "+4 Ob"},
+          "short": {"text": "+3 Ob"},
+          "long": {"text": "+2 Ob"},
+          "longer": {"text": "+1 Ob"},
+          "longest": {"text": "-"},
+          "missle": {"text": "-"}
         },
         "missle": {
-          "shortest": "+5 Ob",
-          "short": "+4 Ob",
-          "long": "+3 Ob",
-          "longer": "+2 Ob",
-          "longest": "+1 Ob",
-          "missle": "-"
+          "shortest": {"text": "+5 Ob"},
+          "short": {"text": "+4 Ob"},
+          "long": {"text": "+3 Ob"},
+          "longer": {"text": "+2 Ob"},
+          "longest": {"text": "+1 Ob"},
+          "missle": {"text": "-"}
         }
       },
       "injury": {
-        "superficial":{"level": "superficial", "effect": "+1 Ob"},
-        "threeSuperficial": {"level": "light (3 Superficial)", "effect": "-1D"},
-        "light": {"level": "light", "effect": "-1D"},
-        "midi": {"level": "midi", "effect": "-2D"},
-        "severe": {"level": "severe", "effect": "-3D"},
-        "traumatic": {"level": "traumatic", "effect": "-4D"}
+        "superficial":{"level": "superficial", "effect": "+1 Ob", "text": "Superficial Wound +1 Ob", "value": 1, "type": "Ob"},
+        "threeSuperficial": {"level": "light (3 Superficial)", "text": "Light Wound (3 Superficial) -1D", "value": -1, "type": "D"},
+        "light": {"level": "light", "effect": "-1D", "text": "Light Wound -1D", "value": -1, "type": "D"},
+        "midi": {"level": "midi", "effect": "-2D", "text": "Midi Wound -2D", "value": -2, "type": "D"},
+        "severe": {"level": "severe", "effect": "-3D", "text": "Severe Wound -3D", "value": -3, "type": "D"},
+        "traumatic": {"level": "traumatic", "effect": "-4D", "text": "Traumatic Wound -4D", "value": -4, "type": "D"}
       }
     });
 

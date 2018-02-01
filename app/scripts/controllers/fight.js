@@ -102,7 +102,7 @@ angular.module('firestarterApp')
       calcInjuries.forEach(function(injury) {
         player.modifications.push({
           "key": "Injury",
-          "value": capitalize(injury.level) + " Wound: " + injury.effect
+          "value": injury
         });
       });
     }
@@ -166,13 +166,13 @@ angular.module('firestarterApp')
       if ($scope.player1.range != null && $scope.player2.range != null) {
 
         if (advantagedPlayer == "player1") {
-          if (ctrl.advantage[$scope.player1.range][$scope.player2.range] !== "-") {
+          if (ctrl.advantage[$scope.player1.range][$scope.player2.range].text !== "-") {
             $scope.player1.modifications.push({
               "key": "Positioning",
               "value": ctrl.advantage[$scope.player1.range][$scope.player2.range]
             });
           }
-          if (ctrl.disadvantage[$scope.player1.range][$scope.player2.range] !== "-") {
+          if (ctrl.disadvantage[$scope.player1.range][$scope.player2.range].text !== "-") {
             $scope.player2.modifications.push({
               "key": "Positioning",
               "value": ctrl.disadvantage[$scope.player1.range][$scope.player2.range]
@@ -180,13 +180,13 @@ angular.module('firestarterApp')
           }
         }
         else if (advantagedPlayer == "player2") {
-          if (ctrl.advantage[$scope.player2.range][$scope.player1.range] !== "-") {
+          if (ctrl.advantage[$scope.player2.range][$scope.player1.range].text !== "-") {
             $scope.player2.modifications.push({
               "key": "Positioning",
               "value": ctrl.advantage[$scope.player2.range][$scope.player1.range]
             });
           }
-          if (ctrl.disadvantage[$scope.player2.range][$scope.player1.range] !== "-") {
+          if (ctrl.disadvantage[$scope.player2.range][$scope.player1.range].text !== "-") {
             $scope.player1.modifications.push({
               "key": "Positioning",
               "value": ctrl.disadvantage[$scope.player2.range][$scope.player1.range]

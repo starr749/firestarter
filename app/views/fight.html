@@ -29,7 +29,7 @@
       </div>
       <div ng-repeat="mod in player1.modifications">
         <hr />
-        <h6>- {{mod.key}}: {{mod.value}}</h6>
+        <h6>- {{mod.key}}: {{mod.value.text}}</h6>
       </div>
     </div>
   </div>
@@ -56,7 +56,7 @@
       </div>
       <div ng-repeat="mod in player2.modifications">
         <hr />
-        <h6>- {{mod.key}}: {{mod.value}}</h6>
+        <h6>- {{mod.key}}: {{mod.value.text}}</h6>
       </div>
     </div>
   </div>
