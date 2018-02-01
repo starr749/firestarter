@@ -40,6 +40,9 @@ angular.module('firestarterApp')
     $scope.player1 = {};
     $scope.player2 = {};
 
+    $scope.player1.name = "Player 1";
+    $scope.player2.name = "Player 2";
+
     $scope.player1.modifications = [];
     $scope.player2.modifications = [];
     $scope.player1.injuries = [];
@@ -74,7 +77,7 @@ angular.module('firestarterApp')
       player.injuries.forEach(function(injury) {
         player.modifications.push({
           "key": "Injury",
-          "value": capitalize(injury.level) + "Wound: " + injury.effect
+          "value": capitalize(injury.level) + " Wound: " + injury.effect
         });
       });
     }
@@ -117,13 +120,12 @@ angular.module('firestarterApp')
     };
 
     var filterMods = function (player, key) {
-      player.modifications = $scope.player1.modifications.filter(function (el) {
+      player.modifications = player.modifications.filter(function (el) {
         return el.key !== key;
       });
-    }
+    };
 
     $scope.calculatePositionAdvantage = function (advantagedPlayer) {
-      $scope.positionAdvantage = advantagedPlayer;
 
       filterMods($scope.player1, "Positioning");
       filterMods($scope.player2, "Positioning");

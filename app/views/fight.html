@@ -10,7 +10,7 @@
     <div class="well">
       <div class="row">
         <div class="col-md-6">
-          <h4>Player 1</h4>
+          <h4>{{player1.name}}</h4>
         </div>
         <div class="col-md-6">
           <button type="button" class="btn btn-warning btn-default btn-xs" ng-show="positionAdvantage === 'player1'">
@@ -37,7 +37,7 @@
     <div class="well">
       <div class="row">
         <div class="col-md-6">
-          <h4>Player 2</h4>
+          <h4>{{player2.name}}</h4>
         </div>
         <div class="col-md-6">
           <button type="button" class="btn btn-warning btn-default btn-xs" ng-show="positionAdvantage === 'player2'">
@@ -166,14 +166,14 @@
     </div>
     <div class="panel-body collapse" id="engagement">
       <div class="panel-body text-center">
-  
+
         <h4>Test for Engage</h4>
         <p>Speed plus advantages for longer stride and longer weapon.</p>
         <h4>Bonus Dice to Engage Tests</h4>
         <p>- Longer stride +1D</p>
         <p>- Stride longer by 4 or more +2D</p>
         <p>- Longer Weapon +1D or +2D</p>
-  
+
         <div class="well">
           <h4>Position Advantage</h4>
           <div class="btn-group" data-toggle="buttons">
@@ -181,11 +181,11 @@
             <button class="btn btn-info" id="p2positionAdv" ng-click="calculatePositionAdvantage('player2')">Player 2</button>
           </div>
         </div>
-  
+
       </div>
     </div>
   </div>
-  
+
   <div class="row marketing">
     <div class="col-sm-6">
       <div class="panel panel-default">
@@ -248,10 +248,10 @@
             </div>
             <div class="panel-body">
                 <h5>Anytime a character suffers a -1D or greater injury, he must make a Steel
-                test.</h5> 
+                test.</h5>
                 <h6>The severity of the wound is subtracted from Steel before the test is
                 made. This includes the third superficial wound (equalling —1D).</h6>
-                
+
                 <h6>Hesitation caused from pain takes effect immediately, interrupting
                 anything the character was doing. (The next action and those following
                 are lost if he hesitates.)</h6>
@@ -275,15 +275,15 @@
                   <button class="btn btn-sm btn-primary" id="p2addMidi" ng-value="" ng-click="addInjury(player2, 'midi')">Midi Wound: -2D</button>
                   <button class="btn btn-sm btn-warning" id="p2addSevere" ng-value="" ng-click="addInjury(player2, 'severe')">Severe Wound: -3D</button>
                   <button class="btn btn-sm btn-danger" id="p2addTraumatic" ng-value="" ng-click="addInjury(player2, 'traumatic')">Traumatic Wound: -4D</button>
-  
+
                 </div>
               </div>
               <div class="panel-body">
                   <h5>Anytime a character suffers a -1D or greater injury, he must make a Steel
-                  test.</h5> 
+                  test.</h5>
                   <h6>The severity of the wound is subtracted from Steel before the test is
                   made. This includes the third superficial wound (equalling —1D).</h6>
-                  
+
                   <h6>Hesitation caused from pain takes effect immediately, interrupting
                   anything the character was doing. (The next action and those following
                   are lost if he hesitates.)</h6>
