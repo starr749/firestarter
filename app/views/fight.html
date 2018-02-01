@@ -8,14 +8,25 @@
 <div class="row marketing">
   <div class="col-sm-6">
     <div class="well">
+      <div class="row" style="margin-bottom: 10px">
+        <div class="col-md-3 col-md-offset-6">
+          <div class="btn-group-vertical" role="group">
+            <button type="button" class="btn btn-warning btn-default btn-xs" ng-show="positionAdvantage === 'player1'" ng-click="resetPosition()">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Position Advantage
+            </button>
+            <button type="button" class="btn btn-info btn-xs" ng-click="changeStance(player1, neutralStance)()">Neutral Stance</button>
+            <button type="button" class="btn btn-danger btn-xs" ng-click="clearInjury(player1)">Reset Injuries</button>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-6">
-          <h4>{{player1.name}}</h4>
-        </div>
-        <div class="col-md-6">
-          <button type="button" class="btn btn-warning btn-default btn-xs" ng-show="positionAdvantage === 'player1'" ng-click="resetPosition()">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Position Advantage
-          </button>
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="player1Name">Player 1 Name</label>
+              <input type="text" ng-model="player1.name" class="form-control" id="player1Name" placeholder="Player 1">
+            </div>
+          </form>
         </div>
       </div>
       <h5>Range: {{player1.range}}</h5>
@@ -27,22 +38,45 @@
         <button class="btn btn-primary" id="p1longest" ng-click="p1range('longest')" style="font-size: 11px">Longest</button>
         <button class="btn btn-primary" id="p1missle" ng-click="p1range('missle')" style="font-size: 11px">Missle</button>
       </div>
-      <div ng-repeat="mod in player1.modifications">
-        <hr />
-        <h6>- {{mod.key}}: {{mod.value.text}}</h6>
-      </div>
+      <hr />
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Ob: +{{player1.totals.ob}}</th>
+          <th>Dice: {{addSign(player1.totals.dice) + player1.totals.dice}}D</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="mod in player1.modifications">
+          <td>{{mod.key}}</td>
+          <td>{{mod.value.text}}</td>
+        </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
   <div class="col-sm-6">
     <div class="well">
-      <div class="row">
-        <div class="col-md-6">
-          <h4>{{player2.name}}</h4>
+      <div class="row" style="margin-bottom: 10px">
+        <div class="col-md-3 col-md-offset-6">
+          <div class="btn-group-vertical" role="group">
+            <button type="button" class="btn btn-warning btn-default btn-xs" ng-show="positionAdvantage === 'player2'" ng-click="resetPosition()">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Position Advantage
+            </button>
+            <button type="button" class="btn btn-info btn-xs" ng-click="changeStance(player2, neutralStance)()">Neutral Stance</button>
+            <button type="button" class="btn btn-danger btn-xs" ng-click="clearInjury(player2)">Reset Injuries</button>
+          </div>
         </div>
-        <div class="col-md-6">
-          <button type="button" class="btn btn-warning btn-default btn-xs" ng-show="positionAdvantage === 'player2'" ng-click="resetPosition()">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Position Advantage
-          </button>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="player2Name">Player 2 Name</label>
+              <input type="text" ng-model="player2.name" class="form-control" id="player2Name" placeholder="Player 2">
+            </div>
+          </form>
         </div>
       </div>
       <h5>Range: {{player2.range}}</h5>
@@ -54,10 +88,21 @@
         <button class="btn btn-primary" id="p2longest" ng-click="p2range('longest')" style="font-size: 11px">Longest</button>
         <button class="btn btn-primary" id="p2missle" ng-click="p2range('missle')" style="font-size: 11px">Missle</button>
       </div>
-      <div ng-repeat="mod in player2.modifications">
-        <hr />
-        <h6>- {{mod.key}}: {{mod.value.text}}</h6>
-      </div>
+      <hr />
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Ob: + {{player2.totals.ob}}</th>
+          <th>Dice: {{addSign(player2.totals.dice) + player2.totals.dice}}D</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="mod in player2.modifications">
+          <td>{{mod.key}}</td>
+          <td>{{mod.value.text}}</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
@@ -65,7 +110,7 @@
 <div class="row marketing">
   <div class="col-sm-6">
     <ui-select ng-model="fight.p1Action.selected" ng-disabled="fight.disabled" ng-change="update(fight.p1Action.selected, fight.p2Action.selected)"
-      style="min-width: 300px;" title="Choose an Action">
+               style="min-width: 300px;" title="Choose an Action">
       <ui-select-match placeholder="Select an Action...">{{$select.selected.name}}</ui-select-match>
       <ui-select-choices group-by="'category'" repeat="action in fight.actions | filter: $select.search">
         <div ng-bind-html="action.name | highlight: $select.search"></div>
@@ -74,7 +119,7 @@
   </div>
   <div class="col-sm-6">
     <ui-select ng-model="fight.p2Action.selected" ng-disabled="fight.disabled" ng-change="update(fight.p2Action.selected, fight.p1Action.selected)"
-      style="min-width: 300px;" title="Choose an Action">
+               style="min-width: 300px;" title="Choose an Action">
       <ui-select-match placeholder="Select an Action...">{{$select.selected.name}}</ui-select-match>
       <ui-select-choices group-by="'category'" repeat="action in fight.actions | filter: $select.search">
         <div ng-bind-html="action.name | highlight: $select.search"></div>
@@ -88,10 +133,10 @@
     <div class="">
       <table class="table table-striped">
         <tbody>
-          <tr>
-            <th scope="row">Type of Test</th>
-            <td>{{player1int}}</td>
-          </tr>
+        <tr>
+          <th scope="row">Type of Test</th>
+          <td>{{player1int}}</td>
+        </tr>
         </tbody>
       </table>
 
@@ -102,7 +147,7 @@
             <div class="panel-heading" role="tab" id="p1{{ key.split(' ').join('_') }}">
               <h4 class="panel-title">
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="false"
-                  aria-controls="collapseOne" data-target="#p1{{key.split(' ').join('_')}}info">
+                   aria-controls="collapseOne" data-target="#p1{{key.split(' ').join('_')}}info">
                   {{ key }}
                 </a>
               </h4>
@@ -126,10 +171,10 @@
     <div class="">
       <table class="table table-striped">
         <tbody>
-          <tr>
-            <th scope="row">Type of Test</th>
-            <td>{{player2int}}</td>
-          </tr>
+        <tr>
+          <th scope="row">Type of Test</th>
+          <td>{{player2int}}</td>
+        </tr>
         </tbody>
       </table>
 
@@ -140,7 +185,7 @@
             <div class="panel-heading" role="tab" id="p2{{ key.split(' ').join('_') }}">
               <h4 class="panel-title">
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="false"
-                  aria-controls="collapseOne" data-target="#p2{{key.replace(' ', '_')}}info">
+                   aria-controls="collapseOne" data-target="#p2{{key.replace(' ', '_')}}info">
                   {{ key }}
                 </a>
               </h4>
@@ -161,134 +206,134 @@
 </div>
 
 <div class="panel panel-default">
-    <div class="panel-heading" type="button" data-toggle="collapse" data-target="#engagement" aria-expanded="false" aria-controls="engagement">
-      <h3 class="panel-title">Engagement</h3>
+  <div class="panel-heading" type="button" data-toggle="collapse" data-target="#engagement" aria-expanded="false" aria-controls="engagement">
+    <h3 class="panel-title">Engagement</h3>
+  </div>
+  <div class="panel-body collapse" id="engagement">
+    <div class="panel-body text-center">
+
+      <h4>Test for Engage</h4>
+      <p>Speed plus advantages for longer stride and longer weapon.</p>
+      <h4>Bonus Dice to Engage Tests</h4>
+      <p>- Longer stride +1D</p>
+      <p>- Stride longer by 4 or more +2D</p>
+      <p>- Longer Weapon +1D or +2D</p>
+
+      <div class="well">
+        <h4>Position Advantage</h4>
+        <div class="btn-group" data-toggle="buttons">
+          <button class="btn btn-danger" id="p1positionAdv" ng-click="calculatePositionAdvantage('player1')">{{player1.name}}</button>
+          <button class="btn btn-info" id="p2positionAdv" ng-click="calculatePositionAdvantage('player2')">{{player2.name}}</button>
+        </div>
+      </div>
+
     </div>
-    <div class="panel-body collapse" id="engagement">
-      <div class="panel-body text-center">
+  </div>
+</div>
 
-        <h4>Test for Engage</h4>
-        <p>Speed plus advantages for longer stride and longer weapon.</p>
-        <h4>Bonus Dice to Engage Tests</h4>
-        <p>- Longer stride +1D</p>
-        <p>- Stride longer by 4 or more +2D</p>
-        <p>- Longer Weapon +1D or +2D</p>
-
-        <div class="well">
-          <h4>Position Advantage</h4>
+<div class="row marketing">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Stance" aria-expanded="false" aria-controls="p1Stance">
+        <h3 class="panel-title">Stance</h3>
+      </div>
+      <div class="panel-body collapse" id="p1Stance">
+        <div class="panel-body">
           <div class="btn-group" data-toggle="buttons">
-            <button class="btn btn-danger" id="p1positionAdv" ng-click="calculatePositionAdvantage('player1')">{{player1.name}}</button>
-            <button class="btn btn-info" id="p2positionAdv" ng-click="calculatePositionAdvantage('player2')">{{player2.name}}</button>
+            <button class="btn btn-danger" id="p1stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player1, aggressiveStance)">Aggressive</button>
+            <button class="btn btn-info" id="p1stanceNeutral" ng-value="aggressiveStance" ng-click="changeStance(player1, neutralStance)">Neutral</button>
+            <button class="btn btn-success" id="p1stanceDefensive" ng-value="aggressiveStance" ng-click="changeStance(player1, defensiveStance)">Defensive</button>
           </div>
         </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="row marketing">
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Stance" aria-expanded="false" aria-controls="p1Stance">
-          <h3 class="panel-title">Stance</h3>
-        </div>
-        <div class="panel-body collapse" id="p1Stance">
-          <div class="panel-body">
-            <div class="btn-group" data-toggle="buttons">
-              <button class="btn btn-danger" id="p1stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player1, aggressiveStance)">Aggressive</button>
-              <button class="btn btn-info" id="p1stanceNeutral" ng-value="aggressiveStance" ng-click="changeStance(player1, neutralStance)">Neutral</button>
-              <button class="btn btn-success" id="p1stanceDefensive" ng-value="aggressiveStance" ng-click="changeStance(player1, defensiveStance)">Defensive</button>
-            </div>
-          </div>
-          <div ng-bind-html="player1.stance.text" class="panel-body">
-            {{ player1.stance.text }}
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Stance" aria-expanded="false" aria-controls="p2Stance">
-          <h3 class="panel-title">Stance</h3>
-        </div>
-        <div class="panel-body collapse" id="p2Stance">
-          <div class="panel-body">
-            <div class="btn-group" data-toggle="buttons">
-              <button class="btn btn-danger" id="p2stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player2, aggressiveStance)">Aggressive</button>
-              <button class="btn btn-info" id="p2stanceNeutral" ng-value="aggressiveStance" ng-click="changeStance(player2, neutralStance)">Neutral</button>
-              <button class="btn btn-success" id="p2stanceDefensive" ng-value="aggressiveStance" ng-click="changeStance(player2, defensiveStance)">Defensive</button>
-            </div>
-          </div>
-          <div ng-bind-html="player2.stance.text" class="panel-body">
-            {{ player2.stance.text }}
-          </div>
+        <div ng-bind-html="player1.stance.text" class="panel-body">
+          {{ player1.stance.text }}
         </div>
       </div>
     </div>
   </div>
-
-  <div class="row marketing">
-      <div class="col-sm-6">
-        <div class="panel panel-default">
-            <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Injury" aria-expanded="false" aria-controls="p1Injury">
-                <h3 class="panel-title">Add Injury</h3>
-              </div>
-          <div class="panel-body collapse" id="p1Injury">
-            <div class="panel-body">
-                <div class="row" style="margin-bottom: 10px;">
-                    <button class="col-sm-2 col-sm-offset-9 btn btn-xs btn-danger" id="p2resetInjury" ng-value="" ng-click="clearInjury(player1)">Reset</button>
-                  </div>
-              <div class="btn-group-vertical" role="group" aria-label="p1Injury" data-toggle="buttons" style="width:100%">
-                <button class="btn btn-sm btn-default" id="p1addSuperficial" ng-value="" ng-click="addInjury(player1, 'superficial')">Superficial Wound: +1 Ob</button>
-                <button class="btn btn-sm btn-info" id="p1addLight" ng-value="" ng-click="addInjury(player1, 'light')">Light Wound: -1D</button>
-                <button class="btn btn-sm btn-primary" id="p1addMidi" ng-value="" ng-click="addInjury(player1, 'midi')">Midi Wound: -2D</button>
-                <button class="btn btn-sm btn-warning" id="p1addSevere" ng-value="" ng-click="addInjury(player1, 'severe')">Severe Wound: -3D</button>
-                <button class="btn btn-sm btn-danger" id="p1addTraumatic" ng-value="" ng-click="addInjury(player1, 'traumatic')">Traumatic Wound: -4D</button>
-              </div>
-            </div>
-            <div class="panel-body">
-                <h5>Anytime a character suffers a -1D or greater injury, he must make a Steel
-                test.</h5>
-                <h6>The severity of the wound is subtracted from Steel before the test is
-                made. This includes the third superficial wound (equalling —1D).</h6>
-
-                <h6>Hesitation caused from pain takes effect immediately, interrupting
-                anything the character was doing. (The next action and those following
-                are lost if he hesitates.)</h6>
-            </div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Stance" aria-expanded="false" aria-controls="p2Stance">
+        <h3 class="panel-title">Stance</h3>
+      </div>
+      <div class="panel-body collapse" id="p2Stance">
+        <div class="panel-body">
+          <div class="btn-group" data-toggle="buttons">
+            <button class="btn btn-danger" id="p2stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player2, aggressiveStance)">Aggressive</button>
+            <button class="btn btn-info" id="p2stanceNeutral" ng-value="aggressiveStance" ng-click="changeStance(player2, neutralStance)">Neutral</button>
+            <button class="btn btn-success" id="p2stanceDefensive" ng-value="aggressiveStance" ng-click="changeStance(player2, defensiveStance)">Defensive</button>
           </div>
+        </div>
+        <div ng-bind-html="player2.stance.text" class="panel-body">
+          {{ player2.stance.text }}
         </div>
       </div>
-      <div class="col-sm-6">
-          <div class="panel panel-default">
-            <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Injury" aria-expanded="false" aria-controls="p2Injury">
-                <h3 class="panel-title">Add Injury</h3>
-              </div>
-          <div class="panel-body collapse" id="p2Injury">
-            <div class="panel-body">
-                <div class="row" style="margin-bottom: 10px;">
-                    <button class="col-sm-2 col-sm-offset-9 btn btn-xs btn-danger" id="p2resetInjury" ng-value="" ng-click="clearInjury(player2)">Reset</button>
-                  </div>
-                <div class="btn-group-vertical" role="group" aria-label="p2Injury" data-toggle="buttons" style="width:100%">
-                  <button class="btn btn-sm btn-default" id="p2addSuperficial" ng-value="" ng-click="addInjury(player2, 'superficial')">Superficial Wound: +1 Ob</button>
-                  <button class="btn btn-sm btn-info" id="p2addLight" ng-value="" ng-click="addInjury(player2, 'light')">Light Wound: -1D</button>
-                  <button class="btn btn-sm btn-primary" id="p2addMidi" ng-value="" ng-click="addInjury(player2, 'midi')">Midi Wound: -2D</button>
-                  <button class="btn btn-sm btn-warning" id="p2addSevere" ng-value="" ng-click="addInjury(player2, 'severe')">Severe Wound: -3D</button>
-                  <button class="btn btn-sm btn-danger" id="p2addTraumatic" ng-value="" ng-click="addInjury(player2, 'traumatic')">Traumatic Wound: -4D</button>
+    </div>
+  </div>
+</div>
 
-                </div>
-              </div>
-              <div class="panel-body">
-                  <h5>Anytime a character suffers a -1D or greater injury, he must make a Steel
-                  test.</h5>
-                  <h6>The severity of the wound is subtracted from Steel before the test is
-                  made. This includes the third superficial wound (equalling —1D).</h6>
-
-                  <h6>Hesitation caused from pain takes effect immediately, interrupting
-                  anything the character was doing. (The next action and those following
-                  are lost if he hesitates.)</h6>
-              </div>
-            </div>
+<div class="row marketing">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Injury" aria-expanded="false" aria-controls="p1Injury">
+        <h3 class="panel-title">Add Injury</h3>
+      </div>
+      <div class="panel-body collapse" id="p1Injury">
+        <div class="panel-body">
+          <div class="row" style="margin-bottom: 10px;">
+            <button class="col-sm-2 col-sm-offset-9 btn btn-xs btn-danger" id="p1resetInjury" ng-value="" ng-click="clearInjury(player1)">Reset</button>
+          </div>
+          <div class="btn-group-vertical" role="group" aria-label="p1Injury" data-toggle="buttons" style="width:100%">
+            <button class="btn btn-sm btn-default" id="p1addSuperficial" ng-value="" ng-click="addInjury(player1, 'superficial')">Superficial Wound: +1 Ob</button>
+            <button class="btn btn-sm btn-info" id="p1addLight" ng-value="" ng-click="addInjury(player1, 'light')">Light Wound: -1D</button>
+            <button class="btn btn-sm btn-primary" id="p1addMidi" ng-value="" ng-click="addInjury(player1, 'midi')">Midi Wound: -2D</button>
+            <button class="btn btn-sm btn-warning" id="p1addSevere" ng-value="" ng-click="addInjury(player1, 'severe')">Severe Wound: -3D</button>
+            <button class="btn btn-sm btn-danger" id="p1addTraumatic" ng-value="" ng-click="addInjury(player1, 'traumatic')">Traumatic Wound: -4D</button>
           </div>
         </div>
+        <div class="panel-body">
+          <h5>Anytime a character suffers a -1D or greater injury, he must make a Steel
+            test.</h5>
+          <h6>The severity of the wound is subtracted from Steel before the test is
+            made. This includes the third superficial wound (equalling —1D).</h6>
+
+          <h6>Hesitation caused from pain takes effect immediately, interrupting
+            anything the character was doing. (The next action and those following
+            are lost if he hesitates.)</h6>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Injury" aria-expanded="false" aria-controls="p2Injury">
+        <h3 class="panel-title">Add Injury</h3>
+      </div>
+      <div class="panel-body collapse" id="p2Injury">
+        <div class="panel-body">
+          <div class="row" style="margin-bottom: 10px;">
+            <button class="col-sm-2 col-sm-offset-9 btn btn-xs btn-danger" id="p2resetInjury" ng-value="" ng-click="clearInjury(player2)">Reset</button>
+          </div>
+          <div class="btn-group-vertical" role="group" aria-label="p2Injury" data-toggle="buttons" style="width:100%">
+            <button class="btn btn-sm btn-default" id="p2addSuperficial" ng-value="" ng-click="addInjury(player2, 'superficial')">Superficial Wound: +1 Ob</button>
+            <button class="btn btn-sm btn-info" id="p2addLight" ng-value="" ng-click="addInjury(player2, 'light')">Light Wound: -1D</button>
+            <button class="btn btn-sm btn-primary" id="p2addMidi" ng-value="" ng-click="addInjury(player2, 'midi')">Midi Wound: -2D</button>
+            <button class="btn btn-sm btn-warning" id="p2addSevere" ng-value="" ng-click="addInjury(player2, 'severe')">Severe Wound: -3D</button>
+            <button class="btn btn-sm btn-danger" id="p2addTraumatic" ng-value="" ng-click="addInjury(player2, 'traumatic')">Traumatic Wound: -4D</button>
+
+          </div>
+        </div>
+        <div class="panel-body">
+          <h5>Anytime a character suffers a -1D or greater injury, he must make a Steel
+            test.</h5>
+          <h6>The severity of the wound is subtracted from Steel before the test is
+            made. This includes the third superficial wound (equalling —1D).</h6>
+
+          <h6>Hesitation caused from pain takes effect immediately, interrupting
+            anything the character was doing. (The next action and those following
+            are lost if he hesitates.)</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

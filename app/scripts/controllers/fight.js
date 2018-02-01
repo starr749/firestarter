@@ -43,6 +43,13 @@ angular.module('firestarterApp')
     $scope.player1.name = "Player 1";
     $scope.player2.name = "Player 2";
 
+    $scope.player1.totals = {};
+    $scope.player2.totals = {};
+    $scope.player1.totals.dice = 0;
+    $scope.player1.totals.ob = 0;
+    $scope.player2.totals.dice = 0;
+    $scope.player2.totals.ob = 0;
+
     $scope.player1.modifications = [];
     $scope.player2.modifications = [];
     $scope.player1.injuries = [];
@@ -62,15 +69,44 @@ angular.module('firestarterApp')
     $scope.player1.stance = $scope.neutralStance;
     $scope.player2.stance = $scope.neutralStance;
 
+    $scope.addSign = function(number) {
+      if(Math.sign(number) == 1) {
+        return "+";
+      } else {
+        return "";
+      }
+    };
+
     $scope.addInjury = function(player, injury) {
-        player.injuries.push(ctrl.injuries[injury])
+        player.injuries.push(ctrl.injuries[injury]);
         updateInjuryMods(player);
-    }
+        updateTotals(player);
+    };
 
     $scope.clearInjury = function(player) {
       player.injuries = [];
       updateInjuryMods(player);
-    }
+      updateTotals(player);
+    };
+    var updateTotals = function(player) {
+      player.totals.dice = 0;
+      player.totals.ob = 0;
+
+      var obTotal = 0;
+      var dTotal = 0;
+
+      player.modifications.forEach(function(mod) {
+        if(mod.value.type === "Ob") {
+          obTotal += mod.value.value;
+        } else if(mod.value.type === "D") {
+          dTotal += mod.value.value;
+        }
+      });
+
+      player.totals.dice = dTotal;
+      player.totals.ob = obTotal;
+
+    };
 
     var updateInjuryMods = function(player) {
       filterMods(player, "Injury");
@@ -113,7 +149,7 @@ angular.module('firestarterApp')
       newStance.mods.forEach(function (mod) {
         player.modifications.push({
           "key": "Stance",
-          "value": mod
+          "value": {"text": mod }
         });
       });
 
@@ -142,6 +178,10 @@ angular.module('firestarterApp')
     $scope.resetAdvantages = function () {
       $scope.player1.modifications = [];
       $scope.player2.modifications = [];
+
+      updateTotals($scope.player1);
+      updateTotals($scope.player2);
+
     };
 
     var filterMods = function (player, key) {
@@ -194,6 +234,9 @@ angular.module('firestarterApp')
           }
         }
       }
+
+      updateTotals($scope.player1);
+      updateTotals($scope.player2);
     };
 
     var capitalize = function (str) {

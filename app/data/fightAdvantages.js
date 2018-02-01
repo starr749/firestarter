@@ -5,52 +5,52 @@
     {
       "position": {
         "shortest": {
-          "shortest": {"text": "-"},
-          "short": {"text": "+1D"},
-          "long": {"text": "+2D"},
-          "longer": {"text": "+2D"},
-          "longest": {"text": "+2D"},
-          "missle": {"text": "+2D"}
+          "shortest": {"text": "-", "type": '', "value": 0},
+          "short": {"text": "+1D", "type": 'D', "value": 1},
+          "long": {"text": "+2D", "type": 'D', "value": 2},
+          "longer": {"text": "+2D", "type": 'D', "value": 2},
+          "longest": {"text": "+2D", "type": 'D', "value": 2},
+          "missle": {"text": "+2D", "type": 'D', "value": 2}
           },
         "short": {
-          "shortest": {"text": "+1D"},
-          "short": {"text": "-"},
-          "long": {"text": "-"},
-          "longer": {"text": "+1D"},
-          "longest": {"text": "+2D"},
-          "missle": {"text": "+2D"}
+          "shortest": {"text": "+1D", "type": 'D', "value": 1},
+          "short": {"text": "-", "type": '', "value": 0},
+          "long": {"text": "-", "type": '', "value": 0},
+          "longer": {"text": "+1D", "type": 'D', "value": 1},
+          "longest": {"text": "+2D", "type": 'D', "value": 2},
+          "missle": {"text": "+2D", "type": 'D', "value": 2}
         },
         "long": {
-          "shortest": {"text": "+2D"},
-          "short": {"text": "+1D"},
-          "long": {"text": "-"},
-          "longer": {"text": "-"},
-          "longest": {"text": "+2D"},
-          "missle": {"text": "+2D"}
+          "shortest": {"text": "+2D", "type": 'D', "value": 2},
+          "short": {"text": "+1D", "type": 'D', "value": 1},
+          "long": {"text": "-", "type": '', "value": 0},
+          "longer": {"text": "-", "type": '', "value": 0},
+          "longest": {"text": "+2D", "type": 'D', "value": 2},
+          "missle": {"text": "+2D", "type": 'D', "value": 2}
         },
         "longer": {
           "shortest": {"text": "+2D"},
           "short": {"text": "+2D"},
           "long": {"text": "+1D"},
-          "longer": {"text": "-"},
-          "longest": {"text": "-"},
+          "longer": {"text": "-", "type": '', "value": 0},
+          "longest": {"text": "-", "type": '', "value": 0},
           "missle": {"text": "+1D"}
         },
         "longest": {
-          "shortest": {"text": "+2D"},
-          "short": {"text": "+2D"},
-          "long": {"text": "+2D"},
-          "longer": {"text": "+1D"},
-          "longest": {"text": "-"},
-          "missle": {"text": "-"}
+          "shortest": {"text": "+2D", "type": 'D', "value": 2},
+          "short": {"text": "+2D", "type": 'D', "value": 2},
+          "long": {"text": "+2D", "type": 'D', "value": 2},
+          "longer": {"text": "+1D", "type": 'D', "value": 1},
+          "longest": {"text": "-", "type": '', "value": 0},
+          "missle": {"text": "-", "type": '', "value": 0}
         },
         "missle": {
-          "shortest": {"text": "+2D"},
-          "short": {"text": "+2D"},
-          "long": {"text": "+2D"},
-          "longer": {"text": "+2D"},
-          "longest": {"text": "+1D"},
-          "missle": {"text": "-"}
+          "shortest": {"text": "+2D", "type": 'D', "value": 2},
+          "short": {"text": "+2D", "type": 'D', "value": 2},
+          "long": {"text": "+2D", "type": 'D', "value": 2},
+          "longer": {"text": "+2D", "type": 'D', "value": 2},
+          "longest": {"text": "+1D", "type": 'D', "value": 1},
+          "missle": {"text": "-", "type": '', "value": 0}
         }
       }
     });
@@ -59,52 +59,52 @@
     {
       "position": {
         "shortest": {
-          "shortest": {"text": "-"},
-          "short": {"text": "+1 Ob"},
-          "long": {"text": "+2 Ob"},
-          "longer": {"text": "+3 Ob"},
-          "longest": {"text": "+4 Ob"},
-          "missle": {"text": "+5 Ob"}
+          "shortest": {"text": "-", "type": '', "value": 0},
+          "short": {"text": "+1 Ob", "type": "Ob", "value": 1},
+          "long": {"text": "+2 Ob", "type": "Ob", "value": 2},
+          "longer": {"text": "+3 Ob", "type": "Ob", "value": 3},
+          "longest": {"text": "+4 Ob", "type": "Ob", "value": 4},
+          "missle": {"text": "+5 Ob", "type": "Ob", "value": 5}
         },
         "short": {
-          "shortest": {"text": "+1 Ob"},
-          "short": {"text": "-"},
-          "long": {"text": "-"},
-          "longer": {"text": "+1 Ob"},
-          "longest": {"text": "+2 Ob"},
-          "missle": {"text": "+3 Ob"}
+          "shortest": {"text": "+1 Ob", "type": "Ob", "value": 1},
+          "short": {"text": "-", "type": '', "value": 0},
+          "long": {"text": "-", "type": '', "value": 0},
+          "longer": {"text": "+1 Ob", "type": "Ob", "value": 1},
+          "longest": {"text": "+2 Ob", "type": "Ob", "value": 2},
+          "missle": {"text": "+3 Ob", "type": "Ob", "value": 3}
         },
         "long": {
-          "shortest": {"text": "+2 Ob"},
-          "short": {"text": "+1 Ob"},
-          "long": {"text": "-"},
-          "longer": {"text": "-"},
-          "longest": {"text": "+1 Ob"},
-          "missle": {"text": "+2 Ob"}
+          "shortest": {"text": "+2 Ob", "type": "Ob", "value": 2},
+          "short": {"text": "+1 Ob", "type": "Ob", "value": 1},
+          "long": {"text": "-", "type": '', "value": 0},
+          "longer": {"text": "-", "type": '', "value": 0},
+          "longest": {"text": "+1 Ob", "type": "Ob", "value": 1},
+          "missle": {"text": "+2 Ob", "type": "Ob", "value": 2}
         },
         "longer": {
-          "shortest": {"text": "+3 Ob"},
-          "short": {"text": "+2 Ob"},
-          "long": {"text": "+1 Ob"},
-          "longer": {"text": "-"},
-          "longest": {"text": "-"},
-          "missle": {"text": "+1 Ob"}
+          "shortest": {"text": "+3 Ob", "type": "Ob", "value": 3},
+          "short": {"text": "+2 Ob", "type": "Ob", "value": 2},
+          "long": {"text": "+1 Ob, \"type\": \"Ob\", \"value\": 1"},
+          "longer": {"text": "-", "type": '', "value": 0 },
+          "longest": {"text": "-", "type": '', "value": 0 },
+          "missle": {"text": "+1 Ob, \"type\": \"Ob\", \"value\": 1"}
         },
         "longest": {
-          "shortest": {"text": "+4 Ob"},
-          "short": {"text": "+3 Ob"},
-          "long": {"text": "+2 Ob"},
-          "longer": {"text": "+1 Ob"},
-          "longest": {"text": "-"},
-          "missle": {"text": "-"}
+          "shortest": {"text": "+4 Ob", "type": "Ob", "value": 4},
+          "short": {"text": "+3 Ob", "type": "Ob", "value": 3},
+          "long": {"text": "+2 Ob", "type": "Ob", "value": 2},
+          "longer": {"text": "+1 Ob", "type": "Ob", "value": 1},
+          "longest": {"text": "-", "type": '', "value": 0 },
+          "missle": {"text": "-", "type": '', "value": 0}
         },
         "missle": {
-          "shortest": {"text": "+5 Ob"},
-          "short": {"text": "+4 Ob"},
-          "long": {"text": "+3 Ob"},
-          "longer": {"text": "+2 Ob"},
-          "longest": {"text": "+1 Ob"},
-          "missle": {"text": "-"}
+          "shortest": {"text": "+5 Ob", "type": "Ob", "value": 5},
+          "short": {"text": "+4 Ob", "type": "Ob", "value": 4},
+          "long": {"text": "+3 Ob", "type": "Ob", "value": 3},
+          "longer": {"text": "+2 Ob", "type": "Ob", "value": 2},
+          "longest": {"text": "+1 Ob", "type": "Ob", "value": 1},
+          "missle": {"text": "-", "type": '', "value": 0 }
         }
       },
       "injury": {
