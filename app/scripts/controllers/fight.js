@@ -150,7 +150,15 @@ angular.module('firestarterApp')
       });
     };
 
+    $scope.resetPosition = function() {
+      $scope.positionAdvantage = '';
+      filterMods($scope.player1, "Positioning");
+      filterMods($scope.player2, "Positioning");
+    };
+
     $scope.calculatePositionAdvantage = function (advantagedPlayer) {
+
+      $scope.positionAdvantage = advantagedPlayer;
 
       filterMods($scope.player1, "Positioning");
       filterMods($scope.player2, "Positioning");
