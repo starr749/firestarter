@@ -8,32 +8,56 @@
 <div class="row marketing">
   <div class="col-sm-6">
     <div class="well">
-      <h4>Player 1</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Player 1</h4>
+        </div>
+        <div class="col-md-6">
+          <button type="button" class="btn btn-warning btn-default btn-xs" ng-show="positionAdvantage === 'player1'">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Position Advantage
+          </button>
+        </div>
+      </div>
       <h5>Range: {{player1.range}}</h5>
       <div class="btn-group btn-group-xs float-none" data-toggle="buttons">
-        <button class="btn btn-primary" id="p1shortest"  ng-click="p1range('shortest')" style="font-size: 11px">Shortest</button>
-        <button class="btn btn-primary" id="p1short"  ng-click="p1range('short')" style="font-size: 11px">Short</button>
-        <button class="btn btn-primary" id="p1long"  ng-click="p1range('long')" style="font-size: 11px">Long</button>
-        <button class="btn btn-primary" id="p1longer"  ng-click="p1range('longer')" style="font-size: 11px">Longer</button>
-        <button class="btn btn-primary" id="p1longest"  ng-click="p1range('longest')" style="font-size: 11px">Longest</button>
-        <button class="btn btn-primary" id="p1missle"  ng-click="p1range('missle')" style="font-size: 11px">Missle</button>
+        <button class="btn btn-primary" id="p1shortest" ng-click="p1range('shortest')" style="font-size: 11px">Shortest</button>
+        <button class="btn btn-primary" id="p1short" ng-click="p1range('short')" style="font-size: 11px">Short</button>
+        <button class="btn btn-primary" id="p1long" ng-click="p1range('long')" style="font-size: 11px">Long</button>
+        <button class="btn btn-primary" id="p1longer" ng-click="p1range('longer')" style="font-size: 11px">Longer</button>
+        <button class="btn btn-primary" id="p1longest" ng-click="p1range('longest')" style="font-size: 11px">Longest</button>
+        <button class="btn btn-primary" id="p1missle" ng-click="p1range('missle')" style="font-size: 11px">Missle</button>
       </div>
-      <h5 ng-repeat="mod in player1.modifications">- {{mod.key}}:{{mod.value}}</h5>
+      <div ng-repeat="mod in player1.modifications">
+        <hr />
+        <h6>- {{mod.key}}:{{mod.value}}</h6>
+      </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="well">
-      <h4>Player 2</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Player 2</h4>
+        </div>
+        <div class="col-md-6">
+          <button type="button" class="btn btn-warning btn-default btn-xs" ng-show="positionAdvantage === 'player2'">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Position Advantage
+          </button>
+        </div>
+      </div>
       <h5>Range: {{player2.range}}</h5>
       <div class="btn-group btn-group-xs" data-toggle="buttons" style="font-size: 11px">
-        <button class="btn btn-primary" id="p2shortest"  ng-click="p2range('shortest')" style="font-size: 11px">Shortest</button>
-        <button class="btn btn-primary" id="p2short"  ng-click="p2range('short')" style="font-size: 11px">Short</button>
-        <button class="btn btn-primary" id="p2long"  ng-click="p2range('long')" style="font-size: 11px">Long</button>
-        <button class="btn btn-primary" id="p2longer"  ng-click="p2range('longer')" style="font-size: 11px">Longer</button>
-        <button class="btn btn-primary" id="p2longest"  ng-click="p2range('longest')" style="font-size: 11px">Longest</button>
-        <button class="btn btn-primary" id="p2missle"  ng-click="p2range('missle')" style="font-size: 11px">Missle</button>
+        <button class="btn btn-primary" id="p2shortest" ng-click="p2range('shortest')" style="font-size: 11px">Shortest</button>
+        <button class="btn btn-primary" id="p2short" ng-click="p2range('short')" style="font-size: 11px">Short</button>
+        <button class="btn btn-primary" id="p2long" ng-click="p2range('long')" style="font-size: 11px">Long</button>
+        <button class="btn btn-primary" id="p2longer" ng-click="p2range('longer')" style="font-size: 11px">Longer</button>
+        <button class="btn btn-primary" id="p2longest" ng-click="p2range('longest')" style="font-size: 11px">Longest</button>
+        <button class="btn btn-primary" id="p2missle" ng-click="p2range('missle')" style="font-size: 11px">Missle</button>
       </div>
-      <h5 ng-repeat="mod in player2.modifications">- {{mod.key}}:{{mod.value}}</h5>
+      <div ng-repeat="mod in player2.modifications">
+        <hr />
+        <h6>- {{mod.key}}:{{mod.value}}</h6>
+      </div>
     </div>
   </div>
 </div>
@@ -55,7 +79,7 @@
       <div class="well">
         <h4>Position Advantage</h4>
         <div class="btn-group" data-toggle="buttons">
-          <button class="btn btn-danger" id="p1positionAdv"  ng-click="calculatePositionAdvantage('player1')">Player 1</button>
+          <button class="btn btn-danger" id="p1positionAdv" ng-click="calculatePositionAdvantage('player1')">Player 1</button>
           <button class="btn btn-info" id="p2positionAdv" ng-click="calculatePositionAdvantage('player2')">Player 2</button>
         </div>
       </div>
@@ -73,9 +97,9 @@
       <div class="panel-body collapse" id="p1Stance">
         <div class="panel-body">
           <div class="btn-group" data-toggle="buttons">
-            <button class="btn btn-danger" id="p1stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(aggressiveStance)">Aggressive</button>
-            <button class="btn btn-info" id="p1stanceNeutral" ng-value="aggressiveStance" ng-click="changeStance(neutralStance)">Neutral</button>
-            <button class="btn btn-success" id="p1stanceDefensive" ng-value="aggressiveStance" ng-click="changeStance(defensiveStance)">Defensive</button>
+            <button class="btn btn-danger" id="p1stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player1, aggressiveStance)">Aggressive</button>
+            <button class="btn btn-info" id="p1stanceNeutral" ng-value="aggressiveStance" ng-click="changeStance(player1, neutralStance)">Neutral</button>
+            <button class="btn btn-success" id="p1stanceDefensive" ng-value="aggressiveStance" ng-click="changeStance(player1, defensiveStance)">Defensive</button>
           </div>
         </div>
         <div ng-bind-html="player1.stance.text" class="panel-body">
@@ -92,9 +116,9 @@
       <div class="panel-body collapse" id="p2Stance">
         <div class="panel-body">
           <div class="btn-group" data-toggle="buttons">
-            <button class="btn btn-danger" id="p2stanceAggressive" ng-value="aggressiveStance" ng-click="changeStanceP2(aggressiveStance)">Aggressive</button>
-            <button class="btn btn-info" id="p2stanceNeutral" ng-value="aggressiveStance" ng-click="changeStanceP2(neutralStance)">Neutral</button>
-            <button class="btn btn-success" id="p2stanceDefensive" ng-value="aggressiveStance" ng-click="changeStanceP2(defensiveStance)">Defensive</button>
+            <button class="btn btn-danger" id="p2stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player2, aggressiveStance)">Aggressive</button>
+            <button class="btn btn-info" id="p2stanceNeutral" ng-value="aggressiveStance" ng-click="changeStance(player2, neutralStance)">Neutral</button>
+            <button class="btn btn-success" id="p2stanceDefensive" ng-value="aggressiveStance" ng-click="changeStance(player2, defensiveStance)">Defensive</button>
           </div>
         </div>
         <div ng-bind-html="player2.stance.text" class="panel-body">
@@ -110,7 +134,8 @@
 
 <div class="row marketing">
   <div class="col-sm-6">
-    <ui-select ng-model="fight.p1Action.selected" ng-disabled="fight.disabled" ng-change="update(fight.p1Action.selected, fight.p2Action.selected)" style="min-width: 300px;" title="Choose an Action">
+    <ui-select ng-model="fight.p1Action.selected" ng-disabled="fight.disabled" ng-change="update(fight.p1Action.selected, fight.p2Action.selected)"
+      style="min-width: 300px;" title="Choose an Action">
       <ui-select-match placeholder="Select an Action...">{{$select.selected.name}}</ui-select-match>
       <ui-select-choices group-by="'category'" repeat="action in fight.actions | filter: $select.search">
         <div ng-bind-html="action.name | highlight: $select.search"></div>
@@ -118,7 +143,8 @@
     </ui-select>
   </div>
   <div class="col-sm-6">
-    <ui-select ng-model="fight.p2Action.selected" ng-disabled="fight.disabled" ng-change="update(fight.p2Action.selected, fight.p1Action.selected)"style="min-width: 300px;" title="Choose an Action">
+    <ui-select ng-model="fight.p2Action.selected" ng-disabled="fight.disabled" ng-change="update(fight.p2Action.selected, fight.p1Action.selected)"
+      style="min-width: 300px;" title="Choose an Action">
       <ui-select-match placeholder="Select an Action...">{{$select.selected.name}}</ui-select-match>
       <ui-select-choices group-by="'category'" repeat="action in fight.actions | filter: $select.search">
         <div ng-bind-html="action.name | highlight: $select.search"></div>
@@ -132,10 +158,10 @@
     <div class="">
       <table class="table table-striped">
         <tbody>
-        <tr>
-          <th scope="row">Type of Test</th>
-          <td>{{player1int}}</td>
-        </tr>
+          <tr>
+            <th scope="row">Type of Test</th>
+            <td>{{player1int}}</td>
+          </tr>
         </tbody>
       </table>
 
@@ -145,7 +171,8 @@
           <div ng-show="isShowableInfo(key)" class="panel panel-default">
             <div class="panel-heading" role="tab" id="p1{{ key.split(' ').join('_') }}">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="false" aria-controls="collapseOne" data-target="#p1{{key.split(' ').join('_')}}info">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="false"
+                  aria-controls="collapseOne" data-target="#p1{{key.split(' ').join('_')}}info">
                   {{ key }}
                 </a>
               </h4>
@@ -169,10 +196,10 @@
     <div class="">
       <table class="table table-striped">
         <tbody>
-        <tr>
-          <th scope="row">Type of Test</th>
-          <td>{{player2int}}</td>
-        </tr>
+          <tr>
+            <th scope="row">Type of Test</th>
+            <td>{{player2int}}</td>
+          </tr>
         </tbody>
       </table>
 
@@ -182,7 +209,8 @@
           <div ng-show="isShowableInfo(key)" class="panel panel-default">
             <div class="panel-heading" role="tab" id="p2{{ key.split(' ').join('_') }}">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="false" aria-controls="collapseOne" data-target="#p2{{key.replace(' ', '_')}}info">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="false"
+                  aria-controls="collapseOne" data-target="#p2{{key.replace(' ', '_')}}info">
                   {{ key }}
                 </a>
               </h4>
