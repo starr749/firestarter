@@ -74,7 +74,32 @@ angular.module('firestarterApp')
 
     var updateInjuryMods = function(player) {
       filterMods(player, "Injury");
+
+      var calcInjuries = [];
+      var supInjuryCount = 0;
       player.injuries.forEach(function(injury) {
+          if(injury.level == "superficial") {
+            supInjuryCount++;
+          }
+      });
+
+      if(supInjuryCount < 3) {
+        calcInjuries = player.injuries;
+      } else {
+        player.injuries.forEach(function(injury) {
+          if(injury.level !== "superficial") {
+            calcInjuries.push(injury);
+          }
+        });
+        for(var i = 0; i < Math.floor(supInjuryCount/3); i++) {
+          calcInjuries.push(ctrl.injuries.threeSuperficial);
+        }
+        for(var i = 0; i < supInjuryCount % 3; i++) {
+          calcInjuries.push(ctrl.injuries.superficial)
+        }
+      }
+
+      calcInjuries.forEach(function(injury) {
         player.modifications.push({
           "key": "Injury",
           "value": capitalize(injury.level) + " Wound: " + injury.effect

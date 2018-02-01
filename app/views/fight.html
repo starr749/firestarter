@@ -84,7 +84,7 @@
 </div>
 <div class="row marketing">
   <div class="col-sm-6">
-    <h5>Resulting Player 1 Interaction</h5>
+    <h5>Resulting {{player1.name}} Interaction</h5>
     <div class="">
       <table class="table table-striped">
         <tbody>
@@ -122,7 +122,7 @@
   </div>
 
   <div class="col-sm-6">
-    <h5>Resulting Player 2 Interaction</h5>
+    <h5>Resulting {{player2.name}} Interaction</h5>
     <div class="">
       <table class="table table-striped">
         <tbody>
@@ -177,8 +177,8 @@
         <div class="well">
           <h4>Position Advantage</h4>
           <div class="btn-group" data-toggle="buttons">
-            <button class="btn btn-danger" id="p1positionAdv" ng-click="calculatePositionAdvantage('player1')">Player 1</button>
-            <button class="btn btn-info" id="p2positionAdv" ng-click="calculatePositionAdvantage('player2')">Player 2</button>
+            <button class="btn btn-danger" id="p1positionAdv" ng-click="calculatePositionAdvantage('player1')">{{player1.name}}</button>
+            <button class="btn btn-info" id="p2positionAdv" ng-click="calculatePositionAdvantage('player2')">{{player2.name}}</button>
           </div>
         </div>
 

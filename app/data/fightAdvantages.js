@@ -109,6 +109,7 @@
       },
       "injury": {
         "superficial":{"level": "superficial", "effect": "+1 Ob"},
+        "threeSuperficial": {"level": "light (3 Superficial)", "effect": "-1D"},
         "light": {"level": "light", "effect": "-1D"},
         "midi": {"level": "midi", "effect": "-2D"},
         "severe": {"level": "severe", "effect": "-3D"},
