@@ -16,6 +16,8 @@
             </button>
             <button type="button" class="btn btn-info btn-xs" ng-click="changeStance(player1, neutralStance)()">Neutral Stance</button>
             <button type="button" class="btn btn-danger btn-xs" ng-click="clearInjury(player1)">Reset Injuries</button>
+            <button type="button" class="btn btn-default btn-xs" ng-click="removeMisc(player1)">Reset Misc</button>
+
           </div>
         </div>
       </div>
@@ -66,6 +68,7 @@
             </button>
             <button type="button" class="btn btn-info btn-xs" ng-click="changeStance(player2, neutralStance)()">Neutral Stance</button>
             <button type="button" class="btn btn-danger btn-xs" ng-click="clearInjury(player2)">Reset Injuries</button>
+            <button type="button" class="btn btn-default btn-xs" ng-click="removeMisc(player2)">Reset Misc</button>
           </div>
         </div>
       </div>
@@ -146,7 +149,7 @@
           <div ng-show="isShowableInfo(key)" class="panel panel-default">
             <div class="panel-heading" role="tab" id="p1{{ key.split(' ').join('_') }}">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="false"
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="true"
                    aria-controls="collapseOne" data-target="#p1{{key.split(' ').join('_')}}info">
                   {{ key }}
                 </a>
@@ -184,7 +187,7 @@
           <div ng-show="isShowableInfo(key)" class="panel panel-default">
             <div class="panel-heading" role="tab" id="p2{{ key.split(' ').join('_') }}">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="false"
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="javascript:;" aria-expanded="true"
                    aria-controls="collapseOne" data-target="#p2{{key.replace(' ', '_')}}info">
                   {{ key }}
                 </a>
@@ -206,10 +209,10 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading" type="button" data-toggle="collapse" data-target="#engagement" aria-expanded="false" aria-controls="engagement">
+  <div class="panel-heading" type="button" data-toggle="collapse" data-target="#engagement" aria-expanded="true" aria-controls="engagement">
     <h3 class="panel-title">Engagement</h3>
   </div>
-  <div class="panel-body collapse" id="engagement">
+  <div class="panel-body collapse in" id="engagement">
     <div class="panel-body text-center">
 
       <h4>Test for Engage</h4>
@@ -234,10 +237,10 @@
 <div class="row marketing">
   <div class="col-sm-6">
     <div class="panel panel-default">
-      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Stance" aria-expanded="false" aria-controls="p1Stance">
+      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Stance" aria-expanded="true" aria-controls="p1Stance">
         <h3 class="panel-title">Stance</h3>
       </div>
-      <div class="panel-body collapse" id="p1Stance">
+      <div class="panel-body collapse in" id="p1Stance">
         <div class="panel-body">
           <div class="btn-group" data-toggle="buttons">
             <button class="btn btn-danger" id="p1stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player1, aggressiveStance)">Aggressive</button>
@@ -253,10 +256,10 @@
   </div>
   <div class="col-sm-6">
     <div class="panel panel-default">
-      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Stance" aria-expanded="false" aria-controls="p2Stance">
+      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Stance" aria-expanded="true" aria-controls="p2Stance">
         <h3 class="panel-title">Stance</h3>
       </div>
-      <div class="panel-body collapse" id="p2Stance">
+      <div class="panel-body collapse in" id="p2Stance">
         <div class="panel-body">
           <div class="btn-group" data-toggle="buttons">
             <button class="btn btn-danger" id="p2stanceAggressive" ng-value="aggressiveStance" ng-click="changeStance(player2, aggressiveStance)">Aggressive</button>
@@ -275,10 +278,10 @@
 <div class="row marketing">
   <div class="col-sm-6">
     <div class="panel panel-default">
-      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Injury" aria-expanded="false" aria-controls="p1Injury">
+      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Injury" aria-expanded="true" aria-controls="p1Injury">
         <h3 class="panel-title">Add Injury</h3>
       </div>
-      <div class="panel-body collapse" id="p1Injury">
+      <div class="panel-body collapse in" id="p1Injury">
         <div class="panel-body">
           <div class="row" style="margin-bottom: 10px;">
             <button class="col-sm-2 col-sm-offset-9 btn btn-xs btn-danger" id="p1resetInjury" ng-value="" ng-click="clearInjury(player1)">Reset</button>
@@ -306,10 +309,10 @@
   </div>
   <div class="col-sm-6">
     <div class="panel panel-default">
-      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Injury" aria-expanded="false" aria-controls="p2Injury">
+      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Injury" aria-expanded="true" aria-controls="p2Injury">
         <h3 class="panel-title">Add Injury</h3>
       </div>
-      <div class="panel-body collapse" id="p2Injury">
+      <div class="panel-body collapse in" id="p2Injury">
         <div class="panel-body">
           <div class="row" style="margin-bottom: 10px;">
             <button class="col-sm-2 col-sm-offset-9 btn btn-xs btn-danger" id="p2resetInjury" ng-value="" ng-click="clearInjury(player2)">Reset</button>
@@ -335,5 +338,72 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row marketing">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p1Misc" aria-expanded="true" aria-controls="p1Misc">
+        <h3 class="panel-title">Add Misc</h3>
+      </div>
+      <div class="panel-body collapse in" id="p1Misc">
+        <div class="panel-body">
+          <div class="row" style="margin-bottom: 10px;">
+            <button class="col-sm-2 col-sm-offset-9 btn btn-xs btn-danger" id="p1resetMisc" ng-value="" ng-click="removeMisc(player1)">Reset</button>
+          </div>
+          <div class="well">
+            <span class="text-primary glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Advantage
+            <hr />
+            <div class="btn-group-vertical" role="group" aria-label="p1MiscAdv" data-toggle="buttons" style="width:100%">
+              <button class="btn btn-sm btn-info" id="p1addObAdvantage" ng-value="" ng-click="addMisc(player1, miscAdvantage.ob)">-1 Obstacle</button>
+              <button class="btn btn-sm btn-primary" id="p1addDAdvantage" ng-value="" ng-click="addMisc(player1, miscAdvantage.dice)">+1 Die</button>
+            </div>
+          </div>
+          <div class="well">
+            <span class="text-danger glyphicon glyphicon-chevron-down" aria-hidden="true"></span> Disadvantage
+            <hr />
+            <div class="btn-group-vertical" role="group" aria-label="p1MiscDisAdv" data-toggle="buttons" style="width:100%">
+              <button class="btn btn-sm btn-warning" id="p1addObDisAdvantage" ng-value="" ng-click="addMisc(player1, miscDisadvantage.ob)">+1 Obstacle</button>
+              <button class="btn btn-sm btn-danger" id="p1addDDisAdvantage" ng-value="" ng-click="addMisc(player1, miscDisadvantage.dice)">-1 Die</button>
+            </div>
+          </div>
+          <h4 class="text-center">Add Additional Bonus or disadvantage to {{player1.name}}</h4>
+          <h5 class="text-center">For being on the ground, magic effect, etc.</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading" type="button" data-toggle="collapse" data-target="#p2Misc" aria-expanded="true" aria-controls="p2Misc">
+          <h3 class="panel-title">Add Misc</h3>
+        </div>
+        <div class="panel-body collapse in" id="p2Misc">
+          <div class="panel-body">
+            <div class="row" style="margin-bottom: 10px;">
+              <button class="col-sm-2 col-sm-offset-9 btn btn-xs btn-danger" id="p2resetMisc" ng-value="" ng-click="removeMisc(player2)">Reset</button>
+            </div>
+            <div class="well">
+              <span class="text-primary glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Advantage
+              <hr />
+              <div class="btn-group-vertical" role="group" aria-label="p1MiscAdv" data-toggle="buttons" style="width:100%">
+                <button class="btn btn-sm btn-info" id="p2addObAdvantage" ng-value="" ng-click="addMisc(player2, miscAdvantage.ob)">-1 Obstacle</button>
+                <button class="btn btn-sm btn-primary" id="p2addDAdvantage" ng-value="" ng-click="addMisc(player2, miscAdvantage.dice)">+1 Die</button>
+              </div>
+            </div>
+            <div class="well">
+              <span class="text-danger glyphicon glyphicon-chevron-down" aria-hidden="true"></span> Disadvantage
+              <hr />
+              <div class="btn-group-vertical" role="group" aria-label="p1MiscDisAdv" data-toggle="buttons" style="width:100%">
+                <button class="btn btn-sm btn-warning" id="p2addObDisAdvantage" ng-value="" ng-click="addMisc(player2, miscDisadvantage.ob)">+1 Obstacle</button>
+                <button class="btn btn-sm btn-danger" id="p2addDDisAdvantage" ng-value="" ng-click="addMisc(player2, miscDisadvantage.dice)">-1 Die</button>
+              </div>
+            </div>
+            <h4 class="text-center">Add Additional Bonus or disadvantage to {{player2.name}}</h4>
+            <h5 class="text-center">For being on the ground, magic effect, etc.</h5>
+          </div>
+        </div>
+      </div>
   </div>
 </div>

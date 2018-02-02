@@ -12,6 +12,14 @@ angular.module('firestarterApp')
 
     var ctrl = this;
 
+    $scope.miscAdvantage = {};
+    $scope.miscDisadvantage = {};
+
+    $scope.miscAdvantage.ob = {"text": "-1 Ob", "type": "Ob", "value": -1};
+    $scope.miscAdvantage.dice = {"text": "+1 D", "type": "D", "value": 1};
+    $scope.miscDisadvantage.ob = {"text": "+1 Ob", "type": "Ob", "value": 1};
+    $scope.miscDisadvantage.dice = {"text": "-1 D", "type": "D", "value": -1};
+
     $scope.aggressiveStance = {
       "name": "aggressive",
       "text": "<p>Aggressive stance grants +2D to Strike and Great " +
@@ -75,6 +83,19 @@ angular.module('firestarterApp')
       } else {
         return "";
       }
+    };
+
+    $scope.addMisc = function(player, miscItem) {
+      player.modifications.push({
+        "key": "Misc",
+        "value": miscItem
+      });
+      updateTotals(player);
+    };
+
+    $scope.removeMisc = function(player) {
+      filterMods(player, "Misc");
+      updateTotals(player);
     };
 
     $scope.addInjury = function(player, injury) {
