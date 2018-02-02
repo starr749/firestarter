@@ -1,10 +1,126 @@
 <div class="row">
+  <div class="col-lg-3 hidden-md hidden-sm hidden-xs affix">
+    <div class="well">
+      <div class="row">
+        <div class="col-lg-5">
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="player1Name">Player 1 Name</label>
+              <input type="text" ng-model="player1.name" class="form-control" id="LGplayer1Name" placeholder="Player 1">
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-3 col-lg-offset-3">
+          <div class="btn-group-vertical" role="group">
+            <button type="button" class="btn btn-warning btn-default btn-xs" ng-show="positionAdvantage === 'player1'" ng-click="resetPosition()">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Position Advantage
+            </button>
+            <button type="button" class="btn btn-info btn-xs" ng-click="changeStance(player1, neutralStance)()">Neutral Stance</button>
+            <button type="button" class="btn btn-danger btn-xs" ng-click="clearInjury(player1)">Reset Injuries</button>
+            <button type="button" class="btn btn-default btn-xs" ng-click="removeMisc(player1)">Reset Misc</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h5>Range: {{player1.range}}</h5>
+          <div class="btn-group btn-group-xs float-none" data-toggle="buttons">
+            <button class="btn btn-primary" id="LGp1shortest" ng-click="p1range('shortest')" style="font-size: 11px">Shortest</button>
+            <button class="btn btn-primary" id="LGp1short" ng-click="p1range('short')" style="font-size: 11px">Short</button>
+            <button class="btn btn-primary" id="LGp1long" ng-click="p1range('long')" style="font-size: 11px">Long</button>
+            <button class="btn btn-primary" id="LGp1longer" ng-click="p1range('longer')" style="font-size: 11px">Longer</button>
+            <button class="btn btn-primary" id="LGp1longest" ng-click="p1range('longest')" style="font-size: 11px">Longest</button>
+            <button class="btn btn-primary" id="LGp1missle" ng-click="p1range('missle')" style="font-size: 11px">Missle</button>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-lg-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Ob: +{{player1.totals.ob}}</th>
+          <th>Dice: {{addSign(player1.totals.dice) + player1.totals.dice}}D</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="mod in player1.modifications">
+          <td>{{mod.key}}</td>
+          <td>{{mod.value.text}}</td>
+        </tr>
+        </tbody>
+      </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
   <div class="col-md-12 col-lg-6 col-lg-offset-3">
     <div class="jumbotron">
       <h1>Fight!</h1>
       <!--<p class="lead">-->
       <!--</p>-->
       <!--<p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>-->
+    </div>
+  </div>
+  <div class="col-lg-3 col-lg-offset-9 hidden-md hidden-sm hidden-xs affix">
+    <div class="well">
+      <div class="row">
+        <div class="col-lg-5">
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="player2Name">Player 2 Name</label>
+              <input type="text" ng-model="player2.name" class="form-control" id="LGplayer2Name" placeholder="Player 2">
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-3 col-lg-offset-3">
+          <div class="btn-group-vertical" role="group">
+            <button type="button" class="btn btn-warning btn-default btn-xs" ng-show="positionAdvantage === 'player2'" ng-click="resetPosition()">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Position Advantage
+            </button>
+            <button type="button" class="btn btn-info btn-xs" ng-click="changeStance(player2, neutralStance)()">Neutral Stance</button>
+            <button type="button" class="btn btn-danger btn-xs" ng-click="clearInjury(player2)">Reset Injuries</button>
+            <button type="button" class="btn btn-default btn-xs" ng-click="removeMisc(player2)">Reset Misc</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h5>Range: {{player2.range}}</h5>
+          <div class="btn-group btn-group-xs float-none" data-toggle="buttons">
+            <button class="btn btn-primary" id="LGp2shortest" ng-click="p2range('shortest')" style="font-size: 11px">Shortest</button>
+            <button class="btn btn-primary" id="LGp2short" ng-click="p2range('short')" style="font-size: 11px">Short</button>
+            <button class="btn btn-primary" id="LGp2long" ng-click="p2range('long')" style="font-size: 11px">Long</button>
+            <button class="btn btn-primary" id="LGp2longer" ng-click="p2range('longer')" style="font-size: 11px">Longer</button>
+            <button class="btn btn-primary" id="LGp2longest" ng-click="p2range('longest')" style="font-size: 11px">Longest</button>
+            <button class="btn btn-primary" id="LGp2missle" ng-click="p2range('missle')" style="font-size: 11px">Missle</button>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Ob: +{{player2.totals.ob}}</th>
+              <th>Dice: {{addSign(player2.totals.dice) + player2.totals.dice}}D</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="mod in player2.modifications">
+              <td>{{mod.key}}</td>
+              <td>{{mod.value.text}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -63,6 +179,7 @@
 
       </div>
     </div>
+
     <div class="col-sm-6">
       <div class="well">
         <div class="row" style="margin-bottom: 10px">
@@ -117,6 +234,7 @@
 </div>
 
 <div class="row marketing">
+
   <div class="col-lg-6 col-lg-offset-3">
     <div class="col-sm-6">
       <ui-select ng-model="fight.p1Action.selected" ng-disabled="fight.disabled" ng-change="update(fight.p1Action.selected, fight.p2Action.selected)"
