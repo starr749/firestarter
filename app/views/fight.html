@@ -41,7 +41,7 @@
       <table class="table">
         <thead>
         <tr>
-          <th>Ob: +{{player1.totals.ob}}</th>
+          <th>Ob: {{addSign(player1.totals.ob) + player1.totals.ob}}</th>
           <th>Dice: {{addSign(player1.totals.dice) + player1.totals.dice}}D</th>
         </tr>
         </thead>
@@ -107,7 +107,7 @@
           <table class="table">
             <thead>
             <tr>
-              <th>Ob: +{{player2.totals.ob}}</th>
+              <th>Ob: {{addSign(player2.totals.ob) + player2.totals.ob}}</th>
               <th>Dice: {{addSign(player2.totals.dice) + player2.totals.dice}}D</th>
             </tr>
             </thead>
