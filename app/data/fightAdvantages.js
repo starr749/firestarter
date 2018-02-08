@@ -85,10 +85,10 @@
         "longer": {
           "shortest": {"text": "+3 Ob", "type": "Ob", "value": 3},
           "short": {"text": "+2 Ob", "type": "Ob", "value": 2},
-          "long": {"text": "+1 Ob, \"type\": \"Ob\", \"value\": 1"},
+          "long": {"text": "+1 Ob", "type": "Ob", "value": 1},
           "longer": {"text": "-", "type": '', "value": 0 },
           "longest": {"text": "-", "type": '', "value": 0 },
-          "missle": {"text": "+1 Ob, \"type\": \"Ob\", \"value\": 1"}
+          "missle": {"text": "+1 Ob", "type": "Ob", "value": 1}
         },
         "longest": {
           "shortest": {"text": "+4 Ob", "type": "Ob", "value": 4},
