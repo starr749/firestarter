@@ -1,6 +1,3 @@
-/**
- * Created by YZG7GP on 9/29/2016.
- */
 'use strict';
 
 /**

@@ -1,0 +1,86 @@
+<div class="col-lg-offset-3 col-lg-6">
+  <div class="jumbotron">
+    <h1>Magic</h1>
+    <!--<p class="lead">-->
+    <!--</p>-->
+    <!--<p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>-->
+  </div>
+
+  <div class="row marketing">
+    <div class="col-sm-6">
+      <h4>Player 1</h4>
+      <ui-select ng-model="magic.spellElement.selected" ng-change="update(magic.spellElement.selected)" style="min-width: 300px;" title="Choose an Element">
+        <ui-select-match placeholder="Select an Element...">{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices group-by="'category'" repeat="element in magic.elementList | filter: $select.search">
+          <div ng-bind-html="element | highlight: $select.search"></div>
+        </ui-select-choices>
+      </ui-select>
+    </div>
+  </div>
+  <div class="row marketing">
+    <div class="col-sm-6">
+      <h5>Resulting Player 1 Interaction</h5>
+      <div class="">
+        <table class="table table-striped">
+          <tbody>
+          <tr>
+            <th scope="row">Type of Test</th>
+            <td>{{spellelement}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Skill(s) to Test</th>
+            <td>{{spellelement}}</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <!--<div ng-show="player1int !== undefined && player1int !== '-' " class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">-->
+          <!--<div class="panel panel-default">-->
+            <!--<div class="panel-heading" role="tab" id="headingOne">-->
+              <!--<h4 class="panel-title">-->
+                <!--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="javascript:;" aria-expanded="true" aria-controls="collapseOne" data-target="#collapseOne">-->
+                  <!--Speaking the Part-->
+                <!--</a>-->
+              <!--</h4>-->
+            <!--</div>-->
+            <!--<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">-->
+              <!--<div class="panel-body">-->
+                <!--{{player1act.speaking}}-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="panel panel-default">-->
+            <!--<div class="panel-heading" role="tab" id="headingTwo">-->
+              <!--<h4 class="panel-title">-->
+                <!--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="javascript:;" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">-->
+                  <!--Effects-->
+                <!--</a>-->
+              <!--</h4>-->
+            <!--</div>-->
+            <!--<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">-->
+              <!--<div class="panel-body">-->
+                <!--{{player1act.effects}}-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div ng-show="player1act.special !== undefined && player1act.special.length !== 0" class="panel panel-default">-->
+            <!--<div class="panel-heading" role="tab" id="headingThree">-->
+              <!--<h4 class="panel-title">-->
+                <!--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="javascript:;" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">-->
+                  <!--Special-->
+                <!--</a>-->
+              <!--</h4>-->
+            <!--</div>-->
+            <!--<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">-->
+              <!--<div class="panel-body">-->
+                <!--{{player1act.special}}-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+      </div>
+    </div>
+
+  </div>
+</div>

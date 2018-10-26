@@ -20,7 +20,8 @@ angular
     'ngTouch',
     'ui.select',
     'actions',
-    'fightAdvantages'
+    'fightAdvantages',
+    'magicWheel'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -38,6 +39,11 @@ angular
         templateUrl: 'views/dow.html',
         controller: 'DowCtrl',
         controllerAs: 'dow'
+      })
+      .when('/magic', {
+        templateUrl: 'views/wheel.html',
+        controller: 'MagicCtrl',
+        controllerAs: 'magic'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
