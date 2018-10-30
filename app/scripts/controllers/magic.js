@@ -32,13 +32,19 @@ angular.module('firestarterApp')
     ctrl.duration = MAGICWHEEL.duration;
     ctrl.area = MAGICWHEEL.area;
 
+    ctrl.displayElement = {};
+    ctrl.displayImpetus = {};
+    ctrl.displayOrigin = {};
+    ctrl.displayDuration = {};
+    ctrl.displayArea = {};
 
     $scope.update = function() {
-      if( (ctrl.p1Action === undefined) || (ctrl.p2Action === undefined)){
-        return;
-      }
 
-      $scope.spellelement = ctrl.spellElement.selected;
+      $scope.spellelement = (ctrl.spellElement !== undefined) ? ctrl.spellElement.selected: undefined;
+      $scope.spellimpetus = (ctrl.spellImpetus !== undefined) ? ctrl.spellImpetus.selected: undefined;
+      $scope.spellorigin = (ctrl.spellOrigin !== undefined) ? ctrl.spellOrigin.selected: undefined;
+      $scope.spellduration = (ctrl.spellDuration !== undefined) ? ctrl.spellDuration.selected: undefined;
+      $scope.spellarea = (ctrl.spellArea !== undefined) ? ctrl.spellArea.selected: undefined;
 
     };
 

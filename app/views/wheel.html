@@ -7,29 +7,66 @@
   </div>
 
   <div class="row center-block">
-    <div class="col-sm-6 col-md-offset-3">
-      <h4>Spell  Facet</h4>
+    <div class="col-sm-8 col-md-offset-2">
+      <h4>Spell  Facets</h4>
       <ui-select ng-model="magic.spellElement.selected" ng-change="update(magic.spellElement.selected)" style="min-width: 300px;" title="Choose an Element">
         <ui-select-match placeholder="Element...">{{$select.selected.name}}</ui-select-match>
         <ui-select-choices repeat="spellElement in magic.elementList | filter: $select.search">
           <div ng-bind-html="spellElement.name | highlight: $select.search"></div>
         </ui-select-choices>
       </ui-select>
+      <ui-select ng-model="magic.spellImpetus.selected" ng-change="update(magic.spellImpetus.selected)" style="min-width: 300px;" title="Choose an Impetus">
+        <ui-select-match placeholder="Impetus...">{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices repeat="spellImpetus in magic.impetusList | filter: $select.search">
+          <div ng-bind-html="spellImpetus.name | highlight: $select.search"></div>
+        </ui-select-choices>
+      </ui-select>
+      <ui-select ng-model="magic.spellOrigin.selected" ng-change="update(magic.spellOrigin.selected)" style="min-width: 300px;" title="Choose an Origin">
+      <ui-select-match placeholder="Origin...">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="spellOrigin in magic.originList | filter: $select.search">
+        <div ng-bind-html="spellOrigin.name | highlight: $select.search"></div>
+      </ui-select-choices>
+    </ui-select>
+      <ui-select ng-model="magic.spellDuration.selected" ng-change="update(magic.spellDuration.selected)" style="min-width: 300px;" title="Choose a Duration">
+      <ui-select-match placeholder="Duration...">{{$select.selected.name}}</ui-select-match>
+      <ui-select-choices repeat="spellDuration in magic.durationList | filter: $select.search">
+        <div ng-bind-html="spellDuration.name | highlight: $select.search"></div>
+      </ui-select-choices>
+    </ui-select>
+      <ui-select ng-model="magic.spellArea.selected" ng-change="update(magic.spellArea.selected)" style="min-width: 300px;" title="Choose an Area">
+        <ui-select-match placeholder="Area...">{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices repeat="spellArea in magic.areaList | filter: $select.search">
+          <div ng-bind-html="spellArea.name | highlight: $select.search"></div>
+        </ui-select-choices>
+      </ui-select>
+
     </div>
   </div>
   <div class="row marketing">
-    <div class="col-sm-6">
-      <h5>Resulting Player 1 Interaction</h5>
+    <div class="col-sm-12">
+      <h5>Spell Facet Descriptions</h5>
       <div class="">
         <table class="table table-striped">
           <tbody>
           <tr>
-            <th scope="row">Type of Test</th>
-            <td>{{spellelement}}</td>
+            <th scope="row">{{spellelement.name}}</th>
+            <td>{{spellelement.description}}</td>
           </tr>
           <tr>
-            <th scope="row">Skill(s) to Test</th>
-            <td>{{spellelement}}</td>
+            <th scope="row">{{spellimpetus.name}}</th>
+            <td>{{spellimpetus.description}}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{spellorigin.name}}</th>
+            <td>{{spellorigin.description}}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{spellduration.name}}</th>
+            <td>{{spellduration.description}}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{spellarea.name}}</th>
+            <td>{{spellarea.description}}</td>
           </tr>
           </tbody>
         </table>
