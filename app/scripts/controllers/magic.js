@@ -16,7 +16,9 @@ angular.module('firestarterApp')
 
     ctrl.gt = {
       "direction": 0    
-    }
+    };
+
+    $scope.garbledClass = '';
 
     $scope.garbleAmount = 0;
 
@@ -57,6 +59,8 @@ angular.module('firestarterApp')
       $scope.spellduration = (ctrl.spellDuration !== undefined) ? ctrl.spellDuration.selected: undefined;
       $scope.spellarea = (ctrl.spellArea !== undefined) ? ctrl.spellArea.selected: undefined;
 
+      $scope.garbledClass = '';
+
       ctrl.validateFields();
     };
 
@@ -74,7 +78,7 @@ angular.module('firestarterApp')
 
       console.log(ctrl.gt);
       console.log($scope.garbleAmount);
-    }
+    };
 
     $scope.garble = function() {
       if($scope.garbleReady) {
@@ -86,55 +90,68 @@ angular.module('firestarterApp')
         var areaId = $scope.spellarea.id;
 
         $scope.spellelement = findItem(ctrl.element, ctrl.gt.direction, $scope.garbleAmount, elementId);
-        $scope.impetusId = findItem(ctrl.impetus, ctrl.gt.direction, $scope.garbleAmount, impetusId);
+        $scope.spellimpetus = findItem(ctrl.impetus, ctrl.gt.direction, $scope.garbleAmount, impetusId);
         $scope.spellorigin = findItem(ctrl.origin, ctrl.gt.direction, $scope.garbleAmount, originId);
         $scope.spellduration = findItem(ctrl.duration, ctrl.gt.direction, $scope.garbleAmount, durationId);
         $scope.spellarea = findItem(ctrl.area, ctrl.gt.direction, $scope.garbleAmount, areaId);
 
+        ctrl.spellElement.selected = $scope.spellelement;
+        ctrl.spellImpetus.selected = $scope.spellimpetus;
+        ctrl.spellOrigin.selected = $scope.spellorigin;
+        ctrl.spellDuration.selected = $scope.spellduration;
+        ctrl.spellArea.selected = $scope.spellarea;
+
+        $scope.garbledClass = 'panel-danger';
       }
-    }
+    };
 
     var findItem = function(linkedList, direction, amount, id) {
+      var i = 0;
+      var j = 0;
       // find item
-      var searchItem = linkedList.first;
+      var searchNode = linkedList.first;
+      console.log(searchNode);
       var searched_flag = 0;
-      while(searchItem.id !== id) {
-        if(searchItem.id === linkedList.first.id) {
+      while(searchNode.data.id !== id) {
+        if(searchNode.data.id === linkedList.first.data.id) {
           searched_flag++;
         }
         if(searched_flag > 1) {
           console.log("We're looping forever");
           return;
         }
-        searchItem = searchItem.next;
+        searchNode = searchNode.next;
       }
 
-      console.log("Found item id: " + searchItem.id);
-      
+      console.log("Found item name: " + searchNode.data.name);
+
+      console.log("direction: " + direction);
       //time to rotate circle
       if(direction === 0) { //counter-clockwise
-        for(i = 0; i > amount; i++) {
-          searchItem = searchItem.prev;
+        console.log("ready to rotate " + amount + " times");
+        for(i = 0; i < amount; i++) {
+          console.log("rotating " + i + " of " + amount + " times");
+          searchNode = searchNode.prev;
         }
       } else if(direction === 1) { //clockwise
-        for(i = 0; i > amount; i++) {
-          searchItem = searchItem.next;
+        console.log("ready to rotate " + amount + " times");
+        for(j = 0; j < amount; j++) {
+          console.log("rotating " + i + " of " + amount + " times");
+          searchNode = searchNode.next;
         }
       }
 
-      return searchItem.data;
-    }
+      console.log("Finished rotating- result: " + searchNode.data.name);
+
+      return searchNode.data;
+    };
 
     ctrl.validateFields = function() {
-      if(ctrl.spellElement !== undefined && 
-        ctrl.spellImpetus !== undefined && 
-        ctrl.spellOrigin !== undefined && 
+      $scope.garbleReady = ctrl.spellElement !== undefined &&
+        ctrl.spellImpetus !== undefined &&
+        ctrl.spellOrigin !== undefined &&
         ctrl.spellDuration !== undefined &&
-        ctrl.spellArea !== undefined) {
-          $scope.garbleReady = true;
-        } else {
-          $scope.garbleReady = false;
-        }
+        ctrl.spellArea !== undefined;
     }
 
 

@@ -59,8 +59,9 @@
         </ui-select>
       </div>
 
-      <div class="well ">
-        <h3>Garbled Transmission</h3>
+      <div ng-show="garbleReady" class="well ">
+        <h2>Garbled Transmission</h2>
+        <hr />
         <form class="form-horizontal">
           <div class="form-group">
             <div class="btn-group col-sm-10" data-toggle="buttons">
@@ -84,7 +85,7 @@
     </div>
     <div class="col-md-6">
 
-      <div class="panel panel-default">
+      <div class="panel panel-default {{garbledClass}}">
         <div class="panel-heading">
           <h3 class="panel-title">Element - {{spellelement.name}}</h3>
         </div>
@@ -93,7 +94,7 @@
         </div>
       </div>
 
-      <div class="panel panel-default">
+      <div class="panel panel-default {{garbledClass}}">
         <div class="panel-heading">
           <h3 class="panel-title">Impetus - {{spellimpetus.name}}</h3>
         </div>
@@ -102,7 +103,7 @@
         </div>
       </div>
 
-      <div class="panel panel-default">
+      <div class="panel panel-default {{garbledClass}}">
         <div class="panel-heading">
           <h3 class="panel-title">Origin - {{spellorigin.name}}</h3>
         </div>
@@ -111,7 +112,7 @@
         </div>
       </div>
 
-      <div class="panel panel-default">
+      <div class="panel panel-default {{garbledClass}}">
         <div class="panel-heading">
           <h3 class="panel-title">Duration - {{spellduration.name}}</h3>
         </div>
@@ -120,7 +121,7 @@
         </div>
       </div>
 
-      <div class="panel panel-default">
+      <div class="panel panel-default {{garbledClass}}">
         <div class="panel-heading">
           <h3 class="panel-title">Area - {{spellarea.name}}</h3>
         </div>

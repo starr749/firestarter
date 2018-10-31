@@ -103,7 +103,7 @@
     'This "sight range" includes extrasensory sight extended by Magesense, Eye of the Eagle a11d such.')));
 
   var duration = new LinkedList();
-  duration.append(new LinkedList.Node(new SpellFacet(2, "Sustained Duration",
+  duration.append(new LinkedList.Node(new SpellFacet(1, "Sustained Duration",
     "A sorcerer is rigorously trained in the art of concentration. " +
     "He is able to slip into trance-like meditation almost instantly, and then, while maintaining the trance, " +
     "come forward in his mind and interact normally with his surroundings. " +
@@ -134,17 +134,17 @@
     "other magical means like Faith, spirits or magic-eating sorcery.")));
 
   var area = new LinkedList();
-  area.append(new LinkedList.Node(new SpellFacet(4, "Caster", "Spell affects the the caster.")));
-  area.append(new LinkedList.Node(new SpellFacet(4, "Double Area", "Spell affects double the area of the spell.")));
-  area.append(new LinkedList.Node(new SpellFacet(4, "Measured Area", "Spell affects a measured area.")));
+  area.append(new LinkedList.Node(new SpellFacet(1, "Caster", "Spell affects the the caster.")));
+  area.append(new LinkedList.Node(new SpellFacet(2, "Double Area", "Spell affects double the area of the spell.")));
+  area.append(new LinkedList.Node(new SpellFacet(3, "Measured Area", "Spell affects a measured area.")));
   area.append(new LinkedList.Node(new SpellFacet(4, "Half Area", "Spell affects half of the area of the spell.")));
-  area.append(new LinkedList.Node(new SpellFacet(4, "Double Natural Effect", "Spell affects double the area the natural forces would normally cause to be affected.")));
-  area.append(new LinkedList.Node(new SpellFacet(4, "Natural Effect", "Effect is of the natural elements of the spell affecting all things in their purview.")));
-  area.append(new LinkedList.Node(new SpellFacet(4, "Half Natural Effect", "Spell affects half the area the natural forces would normally cause to be affected.")));
-  area.append(new LinkedList.Node(new SpellFacet(4, "Double Presence", "Spell affects everything extending to twice the range of the presence of the caster.")));
-  area.append(new LinkedList.Node(new SpellFacet(4, "Presence", "Spell affects everything in the presence of the caster.")));
-  area.append(new LinkedList.Node(new SpellFacet(4, "Half Presence", "Spell affects everything in half the range of the presence of the caster.")));
-  area.append(new LinkedList.Node(new SpellFacet(4, "Single Target", "Spell affects evertying in the area touched by the caster")));
+  area.append(new LinkedList.Node(new SpellFacet(5, "Double Natural Effect", "Spell affects double the area the natural forces would normally cause to be affected.")));
+  area.append(new LinkedList.Node(new SpellFacet(6, "Natural Effect", "Effect is of the natural elements of the spell affecting all things in their purview.")));
+  area.append(new LinkedList.Node(new SpellFacet(7, "Half Natural Effect", "Spell affects half the area the natural forces would normally cause to be affected.")));
+  area.append(new LinkedList.Node(new SpellFacet(8, "Double Presence", "Spell affects everything extending to twice the range of the presence of the caster.")));
+  area.append(new LinkedList.Node(new SpellFacet(9, "Presence", "Spell affects everything in the presence of the caster.")));
+  area.append(new LinkedList.Node(new SpellFacet(10, "Half Presence", "Spell affects everything in half the range of the presence of the caster.")));
+  area.append(new LinkedList.Node(new SpellFacet(11, "Single Target", "Spell affects evertying in the area touched by the caster")));
 
 
   mag.constant('MAGICWHEEL',
