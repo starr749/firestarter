@@ -19,7 +19,7 @@
         </ui-select>
       </div>
       <div class="form-group">
-          <label>Impetus</label>
+        <label>Impetus</label>
         <ui-select ng-model="magic.spellImpetus.selected" ng-change="update(magic.spellImpetus.selected)" style="min-width: 300px;"
           title="Choose an Impetus">
           <ui-select-match placeholder="Impetus...">{{$select.selected.name}}</ui-select-match>
@@ -29,7 +29,7 @@
         </ui-select>
       </div>
       <div class="form-group">
-          <label>Origin</label>
+        <label>Origin</label>
         <ui-select ng-model="magic.spellOrigin.selected" ng-change="update(magic.spellOrigin.selected)" style="min-width: 300px;"
           title="Choose an Origin">
           <ui-select-match placeholder="Origin...">{{$select.selected.name}}</ui-select-match>
@@ -39,7 +39,7 @@
         </ui-select>
       </div>
       <div class="form-group">
-          <label>Duration</label>
+        <label>Duration</label>
         <ui-select ng-model="magic.spellDuration.selected" ng-change="update(magic.spellDuration.selected)" style="min-width: 300px;"
           title="Choose a Duration">
           <ui-select-match placeholder="Duration...">{{$select.selected.name}}</ui-select-match>
@@ -50,7 +50,7 @@
       </div>
 
       <div class="form-group">
-          <label>Area</label>
+        <label>Area</label>
         <ui-select ng-model="magic.spellArea.selected" ng-change="update(magic.spellArea.selected)" style="min-width: 300px;" title="Choose an Area">
           <ui-select-match placeholder="Area...">{{$select.selected.name}}</ui-select-match>
           <ui-select-choices repeat="spellArea in magic.areaList | filter: $select.search">
@@ -59,13 +59,27 @@
         </ui-select>
       </div>
 
-      <div class="well">
-          <h3>Garbled Transmission</h3>
-          <div class="btn-group" data-toggle="buttons">
-            <button class="btn btn-danger" ng-class="counterClockClass" id="counterClockbtn" ng-click="setDirection(0)">Counter-Clockwise</button>
-            <button class="btn btn-success" ng-class="clockClass" id="clockbtn" ng-click="setDirection(1)">Clockwise</button>
+      <div class="well ">
+        <h3>Garbled Transmission</h3>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="btn-group col-sm-10" data-toggle="buttons">
+              <button class="btn btn-danger" ng-class="counterClockClass" id="counterClockbtn" ng-click="setDirection(0)">Counter-Clockwise</button>
+              <button class="btn btn-success" ng-class="clockClass" id="clockbtn" ng-click="setDirection(1)">Clockwise</button>
+            </div>
           </div>
-        </div>
+          <div class="form-group">
+              <div class="col-sm-7">
+                  <div class="input-group">
+                      <input type="number" ng-model="garbleAmount" required class="form-control">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default btn-primary" ng-click="garble()" type="button">Garble!</button>
+                      </span>
+                    </div>
+              </div>
+            </div>
+        </form>
+      </div>
 
     </div>
     <div class="col-md-6">
@@ -117,4 +131,4 @@
     </div>
 
   </div>
-  </div>
+</div>
