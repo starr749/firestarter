@@ -11,6 +11,14 @@ angular.module('firestarterApp')
   .controller('MagicCtrl', ['$scope', '$http', 'MAGICWHEEL', function ($scope, $http, MAGICWHEEL) {
     var ctrl = this;
 
+    $scope.counterClockClass = "";
+    $scope.clockClass = "";
+
+    ctrl.gt = {
+      "direction": 0,
+      "amount": 0 
+    }
+
     ctrl.elementList = [];
     MAGICWHEEL.element.each(function(data){ctrl.elementList.push(data)});
 
@@ -47,6 +55,21 @@ angular.module('firestarterApp')
       $scope.spellarea = (ctrl.spellArea !== undefined) ? ctrl.spellArea.selected: undefined;
 
     };
+
+    $scope.setDirection = function(direction) {
+      ctrl.gt.direction = direction;
+
+      if(direction === 0) {
+        // counter clockwise
+        $scope.counterClockClass = 'active';
+        $scope.clockClass = '';
+      } else if(direction === 1) {
+        $scope.counterClockClass = '';
+        $scope.clockClass = 'active';
+      }
+
+      console.log(ctrl.gt);
+    }
 
 
 
