@@ -93,14 +93,13 @@
   impetus.append(new LinkedList.Node(new SpellFacet(7, "Enhance", "The Enhance impetus grants a boon to its element: It fortified and strengthens to an otherworldly degree.")));
 
   var origin = new LinkedList();
-  origin.append(new LinkedList.Node(new SpellFacet(1, "Sight Origin", "Spells with Personal Origin can only begin at the caster.")));
+  origin.append(new LinkedList.Node(new SpellFacet(1, "Sight Origin", "If the caster can see it, he can affect it. " +
+    'This "sight range" includes extrasensory sight extended by Magesense, Eye of the Eagle and such.')));
   origin.append(new LinkedList.Node(new SpellFacet(2, "Presence Origin",
     "If the caster could speak to the recipient in a normal speaking voice and be understood " +
     "(regardless of other ambient noise), then the recipient is in the Presence of the caster. " +
     "(Thus the caster's Presence does not go through walls.)")));
-  origin.append(new LinkedList.Node(new SpellFacet(3, "Personal Origin",
-    "If the caster can see it, he can affect it. " +
-    'This "sight range" includes extrasensory sight extended by Magesense, Eye of the Eagle a11d such.')));
+  origin.append(new LinkedList.Node(new SpellFacet(3, "Personal Origin", "Spells with Personal Origin can only begin at the caster.")));
 
   var duration = new LinkedList();
   duration.append(new LinkedList.Node(new SpellFacet(1, "Sustained Duration",
